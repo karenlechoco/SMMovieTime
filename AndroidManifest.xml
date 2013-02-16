@@ -1,0 +1,144 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sm.movietime"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- LAUNCHER -->
+        <activity
+            android:name=".Launcher"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <!-- NOW SHOWING -->
+        <activity
+            android:name=".NowShowing"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- NEXT ATTRACTION -->
+        <activity
+            android:name=".NextAttraction"
+            android:label="@string/title_activity_next_attraction"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <!-- COMING SOON -->
+        <activity
+            android:name=".ComingSoon"
+            android:label="@string/title_activity_coming_soon"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <!-- MOVIE DETAILS -->
+        <activity
+            android:name=".MovieDetails"
+            android:label="@string/title_activity_movie_details"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <!-- NOW SHOWING MOVIE DETAILS and COARSE LOCATION -->
+        <activity
+            android:name=".NowShowingMovieDetails"
+            android:label="@string/title_activity_now_showing_movie_details"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <!-- SPECIFIC LOCATION/MALL -->
+        <activity
+            android:name=".SpecificLocation"
+            android:label="@string/title_activity_specific_location"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sm.movietime.NowShowingMovieDetails" />
+        </activity>
+
+        <!-- SCHEDULES -->
+        <activity
+            android:name=".Schedules"
+            android:label="@string/title_activity_schedules"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sm.movietime.SpecificLocation" />
+        </activity>
+
+        <!-- PURCHASE BREAKDOWN: GUARANTEED/RESERVED SEATING -->
+        <activity
+            android:name=".PurchaseBreakdown"
+            android:label="@string/title_activity_purchase_breakdown"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sm.movietime.NowShowingMovieDetails" />
+        </activity>
+
+        <!-- RESERVE SEATS -->
+        <activity
+            android:name=".ReserveSeats"
+            android:label="@string/title_activity_reserve_seats"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sm.movietime.PurchaseBreakdown" />
+            
+        </activity>
+
+        <!-- CINEMA LOGIN -->
+        <activity
+            android:name=".CinemaLogin"
+            android:label="@string/title_activity_cinema_login"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sm.movietime.Schedules" />
+        </activity>
+
+        <!-- SIGNUP -->
+        <activity
+            android:name=".CinemaSignup"
+            android:label="@string/title_activity_cinema_signup"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sm.movietime.CinemaLogin" />
+        </activity>
+        <activity
+            android:name=".Buyactivity"
+            android:label="@string/title_activity_buyactivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+    </application>
+
+</manifest>

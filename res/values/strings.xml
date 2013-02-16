@@ -1,0 +1,48 @@
+<resources>
+
+    <string name="app_name">SM MovieTime</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_purchase_breakdown">Guaranteed Seating</string>
+    <string name="guaranteed_seating">Purchase Breakdown</string>
+    <string name="movietitle">Movie Title</string>
+    <string name="reserve_seats">Reserve Seats</string>
+    <string name="payment_options">Payment Options</string>
+    <string name="gcash">Globe Cash</string>
+    <string name="title_activity_reserve_seats">Reserve Seats</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="next">Next</string>
+    <string name="title_activity_cinema_login">CinemaLogin</string>
+    <string name="sm_login">Login to your SM Cinema Account</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="fname">First Name</string>
+    <string name="mname">Middle Name</string>
+    <string name="lname">Last Name</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="bdate">Birthdate</string>
+    <string name="company_name">Company Name</string>
+    <string name="mobile_no">Mobile Number</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="email">Email Address</string>
+    <string name="retype_email">Retype Email Address</string>
+    <string name="pword">Password</string>
+    <string name="retype_pword">Retype Password</string>
+    <string name="branch">Branch</string>
+    <string name="title_activity_now_showing">NowShowing</string>
+    <string name="title_activity_next_attraction">NextAttraction</string>
+    <string name="title_activity_coming_soon">ComingSoon</string>
+    <string name="title_activity_movie_details">MovieDetails</string>
+    <string name="title_activity_now_showing_movie_details">NowShowingMovieDetails</string>
+    <string name="title_activity_cinema_signup">CinemaSignup</string>
+    <string name="title_activity_schedules">Schedules</string>
+    <string name="title_activity_launcher">Launcher</string>
+    <string name="title_activity_sample">Sample</string>
+    <string name="title_activity_specific_location">SpecificLocation</string>
+    <string name="title_activity_luzonlocation">Luzonlocation</string>
+    <string name="title_activity_visminlocation">Visminlocation</string>
+    <string name="title_activity_buyactivity">Buyactivity</string>
+
+</resources>

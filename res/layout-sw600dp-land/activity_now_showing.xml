@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/global_bg_portrait"
+    android:layout_gravity="center"
+    android:id="@+id/now_showing_layout" >
+
+    <LinearLayout
+        android:id="@+id/menulayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#000"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+        
+        	<TextView
+        	    android:id="@+id/home_now"
+        	    android:text="Now\nShowing"
+        	    android:lines="2"
+        	    android:textColor="#fff"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_margin="10dp" />
+        	
+        	<TextView
+        	    android:id="@+id/home_next"
+        	    android:text="Next\nAttraction"
+        	    android:lines="2"
+        	    android:textColor="#fff"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_margin="10dp" />
+        	
+        	<TextView
+        	    android:id="@+id/home_soon"
+        	    android:text="Coming\nSoon"
+        	    android:lines="2"
+        	    android:textColor="#fff"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_margin="10dp" />
+        	        
+    </LinearLayout>
+    
+    <ImageView
+        android:background="@drawable/back"
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="7dp"
+        android:layout_below="@+id/menulayout" />
+    
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:textSize="15dp"
+        android:textColor="#fff"
+        android:text="" />
+
+</RelativeLayout>

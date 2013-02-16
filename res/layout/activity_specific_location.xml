@@ -1,0 +1,23 @@
+<RelativeLayout 
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="4dp"
+	    android:paddingTop="4dp"
+	    android:paddingBottom="4dp" >
+    
+
+	    <TextView
+	        android:id="@+id/smname"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:textColor="#FFFFFF"
+	        android:textSize="16dp"
+	        android:padding="5dp"
+	        android:paddingLeft="8dp"
+	        android:text="" />
+    
+    
+    </RelativeLayout>
+<!--  </LinearLayout>-->

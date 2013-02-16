@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/global_bg_portrait" >
+
+    <ImageView
+        android:background="@drawable/back"
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"/>
+    
+    <TextView
+        android:id="@+id/now_movietitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:text=""
+        android:textColor="#fff"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:background="@drawable/back"
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="10dp" />
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+        
+        <ImageView
+	        android:id="@+id/nowshowing_poster"
+	        android:layout_width="240dp"
+	        android:layout_height="300dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginRight="10dp" />
+        
+        <LinearLayout android:layout_toRightOf="@+id/nowshowing_poster"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <TextView
+	            android:id="@+id/starring"
+	            android:text="STARRING"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="7dp"
+	            android:textColor="#fff"
+	            android:textSize="20dp" />
+        
+	        <TextView
+	            android:id="@+id/genre"
+	            android:text="GENRE"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="7dp"
+	            android:textColor="#fff"
+	            android:textSize="20dp" />
+	        
+        </LinearLayout>
+        
+    </RelativeLayout>
+    
+    <TextView
+		android:id="@+id/summary"
+	    android:text="SUMMARY"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_margin="7dp"
+	    android:textColor="#fff"
+	    android:textSize="20dp" />
+    
+    <TextView
+        android:id="@+id/where"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:paddingBottom="0dp"
+        android:background="#000"
+        android:textColor="#fff"
+        android:text="Where are you?"
+        android:textSize="25dp" />
+    
+    <ImageView
+		android:background="@drawable/back"
+		android:layout_width="fill_parent"
+		android:layout_height="3dp" />
+    
+    <TextView
+        android:id="@+id/metro_manila"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:paddingTop="0dp"
+        android:background="#a5000000"
+        android:textColor="#fff"
+        android:text="Metro Manila"
+        android:textSize="20dp" />
+    
+    <TextView
+        android:id="@+id/luzon"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:paddingTop="0dp"
+        android:background="#a5000000"
+        android:textColor="#fff"
+        android:text="Luzon"
+        android:textSize="20dp" />
+    
+    <TextView
+        android:id="@+id/vismin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:paddingTop="0dp"
+        android:background="#a5000000"
+        android:textColor="#fff"
+        android:text="VisMin"
+        android:textSize="20dp" />
+    
+</LinearLayout>

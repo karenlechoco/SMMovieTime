@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/global_bg_landscape" >
+
+    <!-- HORIZONTAL LINEAR LAYOUT FOR CANCEL AND SAVE BUTTON -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+	    <Button
+	        android:id="@+id/cancel_res_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="30dp"
+	        android:textSize="10dp"
+	        android:text="@string/cancel" />
+	
+	    <Button
+	        android:id="@+id/save_res_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="30dp"
+	        android:text="@string/save"
+	        android:textSize="10dp" />
+    </LinearLayout>
+    
+    <TextView android:text="SCREEN"
+        android:padding="2dp"
+        android:layout_marginBottom="5dp"
+        android:background="#e9e9e9"
+        android:textColor="#000"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+    <HorizontalScrollView
+        android:id="@+id/reserve_hscroll"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dp" >
+        
+        <ScrollView
+	        android:id="@+id/reserve_scroll"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" >
+                
+    	</ScrollView>
+        
+    </HorizontalScrollView>
+    
+    <!-- HORIZONTAL LINEAR LAYOUT FOR [A] SEATS  
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+        
+    </LinearLayout> -->
+    
+    <!-- HORIZONTAL LINEAR LAYOUT FOR [B] SEATS  
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+        
+    </LinearLayout> -->
+    
+</LinearLayout>

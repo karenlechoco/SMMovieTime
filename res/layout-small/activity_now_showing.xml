@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/global_bg_portrait"
+    android:layout_gravity="center"
+    android:id="@+id/now_showing_layout" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#000"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="7dp" >
+        
+        	<TextView
+        	    android:id="@+id/home_now"
+        	    android:text="Now\nShowing"
+        	    android:lines="2"
+        	    android:textSize="13dp"
+        	    android:textColor="#fff"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginRight="7dp"
+        	    android:layout_gravity="left" />       	
+        	
+        	<TextView
+        	    android:id="@+id/home_next"
+        	    android:text="Next\nAttraction"
+        	    android:lines="2"
+        	    android:textSize="13dp"
+        	    android:textColor="#fff"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginRight="7dp" />
+        	
+        	<TextView
+        	    android:id="@+id/home_soon"
+        	    android:text="Coming\nSoon"
+        	    android:lines="2"
+        	    android:textSize="13dp"
+        	    android:textColor="#fff"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_gravity="right" />
+        	        
+    </LinearLayout>
+    
+    <ImageView
+        android:background="@drawable/back"
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="7dp" />
+    
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:padding="7dp"        
+        android:textSize="15dp"
+        android:textColor="#fff"
+        android:text="" />
+    
+    <LinearLayout android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center" >
+        
+        <Button
+	        android:id="@+id/moreinfo_button"
+	        android:layout_width="80dp"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:text="More\nInfo"
+	        android:textSize="12dp" />
+    
+    	<Button
+	        android:id="@+id/buytickets_button"
+	        android:layout_width="80dp"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:layout_marginLeft="10dp"
+	        android:text="Buy Tickets"
+	        android:textSize="12dp" />
+    	    	   		
+    </LinearLayout>
+
+</LinearLayout>
