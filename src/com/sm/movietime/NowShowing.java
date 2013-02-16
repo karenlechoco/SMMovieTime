@@ -18,12 +18,14 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.Shader.TileMode;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -45,6 +47,7 @@ public class NowShowing extends Activity {
 	TextView details;
 	Integer currentMovie;
 	Intent btn_intnt, tabs_intnt;
+	int x,y;
 		
 	@Override
 	public void onBackPressed() {
@@ -153,7 +156,6 @@ public class NowShowing extends Activity {
 				details.setText(nowdetails.get(arg2));
 				currentMovie = arg2;
 				arg1.setAlpha(1);
-				arg1.setFocusable(true);
 			}
 
 			@Override
@@ -162,29 +164,46 @@ public class NowShowing extends Activity {
 				
 			}
 		});
-                
+                        
         coverFlow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				btn_intnt = new Intent(getBaseContext(), MovieDetails.class);
-				btn_intnt.putExtra("MovieTitle", nowdetails.get(currentMovie));
-				btn_intnt.putExtra("MoviePoster", now.get(currentMovie));
-				btn_intnt.putExtra("status", "now");
-				startActivity(btn_intnt);
+				Rect frame = new Rect();
+				arg1.getGlobalVisibleRect(frame);
+				
+				//check if clicked poster is one at the center
+				//if yes, go to moviedetails.class
+				//if no, the unselected poster becomes center
+				if (frame.contains(x, y) && arg2==currentMovie) {
+					btn_intnt = new Intent(getBaseContext(), MovieDetails.class);
+					btn_intnt.putExtra("MovieTitle", nowdetails.get(currentMovie));
+					btn_intnt.putExtra("MoviePoster", now.get(currentMovie));
+					btn_intnt.putExtra("status", "now");
+					startActivity(btn_intnt);
+				}				
 			}
 		});
-                
-//        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-//        lp.addRule(RelativeLayout.CENTER_IN_PARENT);
-//        
-//        RelativeLayout r = (RelativeLayout)findViewById(R.id.now_showing_layout);
-//        r.addView(coverFlow, 2, lp);
+        
     }
 
     @Override
+	public boolean onTouchEvent(MotionEvent event) {
+		// TODO Auto-generated method stub
+    	x = (int)event.getRawX();
+        y = (int)event.getRawY();
+		return super.onTouchEvent(event);
+	}
+    
+    public boolean onTouch(View v, MotionEvent event) {
+        x = (int)event.getRawX();
+        y = (int)event.getRawY();
+        return false;
+    }
+
+	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_now_showing, menu);
         return true;
