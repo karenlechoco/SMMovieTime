@@ -22,17 +22,32 @@
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
 
-        <!-- NOW SHOWING -->
+        
+        <!-- TAB -->
         <activity
-            android:name=".NowShowing"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
+            android:name=".tabmenu"
+            android:label="@string/tabmenu" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+
+        <!-- NOW SHOWING -->
+        <activity
+            android:name=".NowShowing"
+            android:label="@string/title_activity_now_showing"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
 
         <!-- NEXT ATTRACTION -->

@@ -89,37 +89,7 @@ public class NowShowing extends Activity {
         details = (TextView)findViewById(R.id.details);
         details.setText(nowdetails.get(0));
         		                
-        final TextView nowshowing = (TextView)findViewById(R.id.home_now);
-        nowshowing.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				tabs_intnt = new Intent(v.getContext(), NowShowing.class);
-        		startActivity(tabs_intnt);
-			}
-		});
         
-        final TextView nextattract = (TextView)findViewById(R.id.home_next);
-        nextattract.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				tabs_intnt = new Intent(v.getContext(), NextAttraction.class);
-        		startActivity(tabs_intnt);
-				
-			}
-		});
-        
-        final TextView comingsoon = (TextView)findViewById(R.id.home_soon);
-        comingsoon.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				tabs_intnt = new Intent(v.getContext(), ComingSoon.class);
-        		startActivity(tabs_intnt);
-				
-			}
-		});
         
 //        CoverFlow coverFlow = new CoverFlow(this);
 //        coverFlow.setBackgroundColor(Color.TRANSPARENT);
