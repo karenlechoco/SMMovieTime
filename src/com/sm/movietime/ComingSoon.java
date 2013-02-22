@@ -138,7 +138,7 @@ public class ComingSoon extends Activity {
 					btn_intnt = new Intent(getBaseContext(), MovieDetails.class);
 					btn_intnt.putExtra("MovieTitle", soondetails.get(currentMovie));
 					btn_intnt.putExtra("MoviePoster", soon.get(currentMovie));
-					btn_intnt.putExtra("status", "now");
+					btn_intnt.putExtra("status", "soon");
 					startActivity(btn_intnt);
 				}				
 			}
