@@ -10,6 +10,7 @@ import android.widget.Button;
 public class CinemaLogin extends Activity {
 
 	Intent i;
+	Intent ii;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
