@@ -10,6 +10,8 @@ import android.widget.TabHost;
 
 public class tabmenu extends TabActivity {
 
+	private String string;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
