@@ -5,7 +5,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="14" />
+        android:targetSdkVersion="17" />
     
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -20,22 +20,20 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
-
-        
-        <!-- TAB -->
-        <activity
-            android:name=".tabmenu"
-            android:label="@string/tabmenu"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        
+        <!-- TAB -->
+        <activity
+            android:name=".TabMenu"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
 
         <!-- NOW SHOWING -->
         <activity
@@ -43,13 +41,6 @@
             android:label="@string/title_activity_now_showing"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
 
         <!-- NEXT ATTRACTION -->
@@ -72,14 +63,6 @@
         <activity
             android:name=".MovieDetails"
             android:label="@string/title_activity_movie_details"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
-
-        <!-- NOW SHOWING MOVIE DETAILS and COARSE LOCATION -->
-        <activity
-            android:name=".NowShowingMovieDetails"
-            android:label="@string/title_activity_now_showing_movie_details"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
@@ -150,12 +133,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sm.movietime.CinemaLogin" />
         </activity>
-        <activity
-            android:name=".Buyactivity"
-            android:label="@string/title_activity_buyactivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
+        
     </application>
 
 </manifest>

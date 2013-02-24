@@ -8,7 +8,7 @@ import android.content.res.Resources;
 import android.view.Menu;
 import android.widget.TabHost;
 
-public class tabmenu extends TabActivity {
+public class TabMenu extends TabActivity {
 
 	private String string;
 	
