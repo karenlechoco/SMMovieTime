@@ -18,7 +18,7 @@ public class DBHelper_MovieTable extends SQLiteOpenHelper {
 	
 	private static final String KEY_MOVIE_CODE = "code";
 	private static final String KEY_MOVIE_TITLE = "title";
-	private static final String KEY_MOVIE_POSTERURL = "poster";
+	private static final String KEY_MOVIE_POSTERURL = "posterurl";
 	private static final String KEY_MOVIE_SUMMARY = "summary";
 	private static final String KEY_MOVIE_GENRE = "genre";
 	private static final String KEY_MOVIE_STARRING = "starring";
@@ -47,7 +47,6 @@ public class DBHelper_MovieTable extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO Auto-generated method stub
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_MOVIE);
 		onCreate(db);
 	}
@@ -63,31 +62,28 @@ public class DBHelper_MovieTable extends SQLiteOpenHelper {
 		values.put(KEY_MOVIE_GENRE, m.getGenre());
 		values.put(KEY_MOVIE_STARRING, m.getStarring());
 		values.put(KEY_MOVIE_STATUS, m.getStatus());
-		
-		
 
 		db.insert(TABLE_MOVIE, null, values);
-		db.close(); // Closing database connection
-		Log.d("APP", "done addMovie()");
+		db.close();
 	}
 	
 	public List<Movie> getMovies (String status) {
 		SQLiteDatabase db = getReadableDatabase();
 		List<Movie> movies = new ArrayList<Movie>();
-		Movie m = new Movie();
-		Cursor c = db.rawQuery("SELECT * FROM " + TABLE_MOVIE + " WHERE " + KEY_MOVIE_STATUS + "='" + status + "'", null);
-		if (c.moveToFirst()) {
-			do {
-				m.setCode(c.getString(c.getColumnIndex(KEY_MOVIE_CODE)));
-				m.setGenre(c.getString(c.getColumnIndex(KEY_MOVIE_GENRE)));
-				m.setPosterUrl(c.getString(c.getColumnIndex(KEY_MOVIE_POSTERURL)));
-				m.setStarring(c.getString(c.getColumnIndex(KEY_MOVIE_STARRING)));
-				m.setStatus(c.getString(c.getColumnIndex(KEY_MOVIE_STATUS)));
-				m.setSummary(c.getString(c.getColumnIndex(KEY_MOVIE_SUMMARY)));
-				m.setTitle(c.getString(c.getColumnIndex(KEY_MOVIE_TITLE)));
-				movies.add(m);
-			} while (c.moveToNext());
+		String sql = "SELECT * FROM " + TABLE_MOVIE + " WHERE " + KEY_MOVIE_STATUS + "='" + status + "'";
+		Cursor c = db.rawQuery(sql, null);
+		while (c.moveToNext()) {
+			Movie m = new Movie();
+			m.setCode(c.getString(c.getColumnIndex(KEY_MOVIE_CODE)));
+			m.setGenre(c.getString(c.getColumnIndex(KEY_MOVIE_GENRE)));
+			m.setPosterUrl(c.getString(c.getColumnIndex(KEY_MOVIE_POSTERURL)));
+			m.setStarring(c.getString(c.getColumnIndex(KEY_MOVIE_STARRING)));
+			m.setStatus(c.getString(c.getColumnIndex(KEY_MOVIE_STATUS)));
+			m.setSummary(c.getString(c.getColumnIndex(KEY_MOVIE_SUMMARY)));
+			m.setTitle(c.getString(c.getColumnIndex(KEY_MOVIE_TITLE)));
+			movies.add(m);
 		}
+		c.close();
 		return movies;
 	}
 	
@@ -95,16 +91,22 @@ public class DBHelper_MovieTable extends SQLiteOpenHelper {
 		Movie m = new Movie();
 		SQLiteDatabase db = getReadableDatabase();
 		
-		Cursor c = db.rawQuery("SELECT * FROM " + TABLE_MOVIE + " WHERE " + KEY_MOVIE_CODE + "='" + code + "'", null);
-		if (c!=null) {
+		Cursor c = db.query(TABLE_MOVIE, 
+				new String[] { KEY_MOVIE_TITLE, KEY_MOVIE_SUMMARY, KEY_MOVIE_GENRE, KEY_MOVIE_STARRING }, 
+				KEY_MOVIE_CODE + "=?",
+				new String[] { code }, null, null, null, null);
+		
+		//Cursor c = db.rawQuery("SELECT * FROM " + TABLE_MOVIE + " WHERE " + KEY_MOVIE_CODE + "='" + code + "'", null);
+		if (c.moveToNext()) {
 			m.setCode(code);
 			m.setGenre(c.getString(c.getColumnIndex(KEY_MOVIE_GENRE)));
 			m.setPosterUrl(c.getString(c.getColumnIndex(KEY_MOVIE_POSTERURL)));
 			m.setStarring(c.getString(c.getColumnIndex(KEY_MOVIE_STARRING)));
 			m.setSummary(c.getString(c.getColumnIndex(KEY_MOVIE_SUMMARY)));
 			m.setTitle(c.getString(c.getColumnIndex(KEY_MOVIE_TITLE)));
+			Log.d("Summary", m.getSummary());
 		}
-		
+		c.close();
 		return m;
 	}
 	

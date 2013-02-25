@@ -4,51 +4,32 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sm.database.*;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff.Mode;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.graphics.Shader.TileMode;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.sm.database.DBHelper_MovieTable;
+import com.sm.database.Movie;
+
+@SuppressWarnings("deprecation")
 public class NowShowing extends Activity {
 
-	List<Integer> now;	
 	List<Movie> now_movies;
+	List<Integer> now;
 
 	TextView details;
 	Integer currentMovie, x, y;
@@ -65,17 +46,20 @@ public class NowShowing extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_showing);        
-        currentMovie=0; //set default value to 0, in case first movie is preferred by user
+        currentMovie=0;
         
         now_movies = new ArrayList<Movie>();
         
-        DBHelper_MovieTable tbl = new DBHelper_MovieTable(getBaseContext());
+        DBHelper_MovieTable tbl = new DBHelper_MovieTable(this);
 		now_movies = tbl.getMovies("now");
+		
+		for (int i=0; i<now_movies.size(); i++) {
+			Log.d("APP", now_movies.get(i).getSummary());
+		}
         
         Field[] fields = R.drawable.class.getFields();
         now = new ArrayList<Integer>();
         for (Field field : fields) {
-            // Take only those with name starting with "fr"
             if (field.getName().startsWith("now_")) {
                 try {
 					now.add(field.getInt(null));
@@ -125,6 +109,9 @@ public class NowShowing extends Activity {
 					btn_intnt = new Intent(getBaseContext(), MovieDetails.class);
 					btn_intnt.putExtra("MovieTitle", now_movies.get(currentMovie).getTitle());
 					btn_intnt.putExtra("MoviePoster", now.get(currentMovie));
+					btn_intnt.putExtra("MovieSummary", now_movies.get(currentMovie).getSummary());
+					btn_intnt.putExtra("MovieStarring", now_movies.get(currentMovie).getStarring());
+					btn_intnt.putExtra("MovieGenre", now_movies.get(currentMovie).getGenre());
 					btn_intnt.putExtra("status", "now");
 					startActivity(btn_intnt);
 				}				
@@ -153,12 +140,11 @@ public class NowShowing extends Activity {
     }
     	
     public class ImageAdapter extends BaseAdapter {
-		 int mGalleryItemBackground;
 	     private Context mContext;
 	     
 	     public ImageAdapter(Context c) { mContext = c; }
 	     	
-	     public int getCount() { return now.size(); }
+	     public int getCount() { return now_movies.size(); }
 	
 	     public Object getItem(int position) { return position; }
 	
@@ -170,7 +156,5 @@ public class NowShowing extends Activity {
 	         i.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));	         	         
 	         return i;
 	     }
-	
 	 }
-
 }

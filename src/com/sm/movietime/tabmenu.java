@@ -1,16 +1,14 @@
 package com.sm.movietime;
 
-import android.os.Bundle;
-import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TabHost;
 
+@SuppressWarnings("deprecation")
 public class TabMenu extends TabActivity {
-
-	private String string;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {

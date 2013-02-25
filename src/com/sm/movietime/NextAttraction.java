@@ -4,28 +4,11 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sm.movietime.NowShowing.ImageAdapter;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.PorterDuff.Mode;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader.TileMode;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
@@ -36,24 +19,24 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.sm.database.DBHelper_MovieTable;
+import com.sm.database.Movie;
+
+@SuppressWarnings({ "deprecation" })
 public class NextAttraction extends Activity {
 
 	List<Integer> next;
-	List<String> nextdetails;
+	List<Movie> next_movies;
 	
 	TextView details;
-	Integer currentMovie;
+	Integer currentMovie, x, y;
 	Button moreinfo;
 	Intent btn_intnt;
-	int x,y;
 	
 	@Override
 	public void onBackPressed() {
-		// TODO Auto-generated method stub
 		finish();
 	}
 	
@@ -63,21 +46,17 @@ public class NextAttraction extends Activity {
         setContentView(R.layout.activity_next_attraction);
         currentMovie=0;
         
-        nextdetails = new ArrayList<String>();
-
-        nextdetails.add("21 and Over");
-        nextdetails.add("Man of Steel");
-        nextdetails.add("Struck by Lightning");
-        nextdetails.add("The Host");
+        next_movies = new ArrayList<Movie>();
+        
+        DBHelper_MovieTable tbl = new DBHelper_MovieTable(this);
+        next_movies = tbl.getMovies("next");
         
         Field[] fields = R.drawable.class.getFields();
         next = new ArrayList<Integer>();
         for (Field field : fields) {
-            // Take only those with name starting with "fr"
             if (field.getName().startsWith("next_")) {
                 try {
 					next.add(field.getInt(null));
-					//nextdetails.add(String.valueOf(field.getInt(null)));
 				} catch (IllegalArgumentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -89,7 +68,7 @@ public class NextAttraction extends Activity {
         }
         
         details = (TextView)findViewById(R.id.details);
-        details.setText(nextdetails.get(0));
+        details.setText(next_movies.get(0).getTitle());
         
         final Gallery coverFlow = (Gallery)findViewById(R.id.movie_catalogue);
         coverFlow.setAdapter(new ImageAdapter(this));
@@ -99,27 +78,22 @@ public class NextAttraction extends Activity {
         coverFlow.setFocusable(false);
         
         coverFlow.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
-				details.setText(nextdetails.get(arg2));
+				details.setText(next_movies.get(arg2).getTitle());
 				currentMovie = arg2;
 				arg1.setAlpha(1);
 			}
 
 			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void onNothingSelected(AdapterView<?> arg0) {}
 		});
                         
         coverFlow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				// TODO Auto-generated method stub
 				Rect frame = new Rect();
 				arg1.getGlobalVisibleRect(frame);
@@ -129,8 +103,11 @@ public class NextAttraction extends Activity {
 				//if no, the unselected poster becomes center
 				if (frame.contains(x, y) && arg2==currentMovie) {
 					btn_intnt = new Intent(getBaseContext(), MovieDetails.class);
-					btn_intnt.putExtra("MovieTitle", nextdetails.get(currentMovie));
+					btn_intnt.putExtra("MovieTitle", next_movies.get(currentMovie).getTitle());
 					btn_intnt.putExtra("MoviePoster", next.get(currentMovie));
+					btn_intnt.putExtra("MovieSummary", next_movies.get(currentMovie).getSummary());
+					btn_intnt.putExtra("MovieStarring", next_movies.get(currentMovie).getStarring());
+					btn_intnt.putExtra("MovieGenre", next_movies.get(currentMovie).getGenre());
 					btn_intnt.putExtra("status", "next");
 					startActivity(btn_intnt);
 				}				
@@ -160,52 +137,21 @@ public class NextAttraction extends Activity {
     }
     
     public class ImageAdapter extends BaseAdapter {
-		 int mGalleryItemBackground;
 	     private Context mContext;
-	
-	     private ImageView[] mImages;
+		     
+	     public ImageAdapter(Context c) { mContext = c; }
 	     
-	     public ImageAdapter(Context c) {
-	      mContext = c;
-	      mImages = new ImageView[next.size()];
-	     }
-	     
-	     public int getCount() {
-	         return next.size();
-	     }
+	     public int getCount() { return next_movies.size(); }
 	
-	     public Object getItem(int position) {
-	         return position;
-	     }
+	     public Object getItem(int position) { return position; }
 	
-	     public long getItemId(int position) {
-	         return position;
-	     }
+	     public long getItemId(int position) { return position; }
 	
 	     public View getView(int position, View convertView, ViewGroup parent) {
-	
-	      //Use this code if you want to load from resources
 	    	 ImageView i = new ImageView(mContext);
 	    	 i.setImageResource(next.get(position));
-	         
-	         i.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
-	         i.setScaleType(ImageView.ScaleType.CENTER_INSIDE); 
-	         
-	         //Make sure we set anti-aliasing otherwise we get jaggies
-	         BitmapDrawable drawable = (BitmapDrawable) i.getDrawable();
-	         drawable.setAntiAlias(true);
-	         	         
+	         i.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));        
 	         return i;
-	      
-	      //return mImages[position];
-	     }
-	   /** Returns the size (0.0f to 1.0f) of the views 
-	      * depending on the 'offset' to the center. */ 
-	      public float getScale(boolean focused, int offset) { 
-	        /* Formula: 1 / (2 ^ offset) */ 
-	          return Math.max(0, 1.0f / (float)Math.pow(2, Math.abs(offset))); 
-	      } 
-	
+	     }	
 	 }
-
 }

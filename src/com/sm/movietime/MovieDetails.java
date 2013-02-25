@@ -10,10 +10,6 @@ import android.widget.TextView;
 
 public class MovieDetails extends Activity {
 
-	ImageView img;
-	TextView starring;
-	TextView genre;
-	TextView summary;
 	Intent i;
 	
     @Override
@@ -27,11 +23,17 @@ public class MovieDetails extends Activity {
         	if (extras.getString("status").equals("now")) {
         		setContentView(R.layout.activity_now_showing_movie_details);
                         
-        		final TextView title = (TextView)findViewById(R.id.movietitle);
-                final ImageView poster = (ImageView)findViewById(R.id.poster);
+        		final TextView title = (TextView)findViewById(R.id.now_movietitle);
+                final ImageView poster = (ImageView)findViewById(R.id.now_poster);
+                final TextView summary = (TextView)findViewById(R.id.now_summary);
+                final TextView genre = (TextView)findViewById(R.id.now_genre);
+                final TextView starring = (TextView)findViewById(R.id.now_starring);
                 
                 title.setText(extras.getString("MovieTitle"));
             	poster.setImageResource(movieposter);
+            	summary.setText(extras.getString("MovieSummary"));
+            	genre.setText(extras.getString("MovieGenre"));
+            	starring.setText(extras.getString("MovieStarring"));
             	
                 final TextView manila = (TextView)findViewById(R.id.metro_manila);
                 manila.setOnClickListener(new View.OnClickListener() {
@@ -75,11 +77,17 @@ public class MovieDetails extends Activity {
         	else {
         		setContentView(R.layout.activity_movie_details);
         		
-        		final TextView title1 = (TextView)findViewById(R.id.movietitle);
-                final ImageView poster1 = (ImageView)findViewById(R.id.poster);
+        		final TextView title = (TextView)findViewById(R.id.movietitle);
+                final ImageView poster = (ImageView)findViewById(R.id.poster);
+                final TextView summary = (TextView)findViewById(R.id.summary);
+                final TextView genre = (TextView)findViewById(R.id.genre);
+                final TextView starring = (TextView)findViewById(R.id.starring);
         		
-        		title1.setText(extras.getString("MovieTitle"));
-            	poster1.setImageResource(movieposter);
+                title.setText(extras.getString("MovieTitle"));
+            	poster.setImageResource(movieposter);
+            	summary.setText(extras.getString("MovieSummary"));
+            	genre.setText(extras.getString("MovieGenre"));
+            	starring.setText(extras.getString("MovieStarring"));
         	}
         }
         

@@ -18,23 +18,25 @@
 		    <ImageView
 		        android:background="@drawable/back"
 		        android:layout_width="fill_parent"
+		        android:contentDescription="@string/contentDescription"
 		        android:layout_height="3dp"/>
     
 		    <TextView
-		        android:id="@+id/movietitle"
+		        android:id="@+id/now_movietitle"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:padding="5dp"
 		        android:textStyle="bold"
 		        android:text=""
 		        android:textColor="#fff"
-		        android:textSize="22dp" />
+		        android:textSize="22sp" />
 
 		    <ImageView
 		        android:id="@+id/border"
 		        android:background="@drawable/back"
 		        android:layout_width="fill_parent"
 		        android:layout_height="3dp"
+		        android:contentDescription="@string/contentDescription"
 		        android:layout_marginBottom="7dp" />
     
 		    <RelativeLayout
@@ -43,49 +45,47 @@
 		        android:padding="5dp" >
         
 		        <ImageView
-			        android:id="@+id/poster"
+			        android:id="@+id/now_poster"
 			        android:layout_below="@+id/border"
 			        android:layout_width="150dp"
 			        android:paddingLeft="5dp"
+			        android:contentDescription="@string/contentDescription"
 			        android:layout_height="wrap_content"
 			        android:layout_alignParentLeft="true"
 			        android:layout_marginRight="10dp" />
         
-		        <LinearLayout android:layout_toRightOf="@+id/poster"
+		        <LinearLayout android:layout_toRightOf="@+id/now_poster"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
 		            android:orientation="vertical">
             
 		            <TextView
-			            android:id="@+id/starring"
-			            android:text="STARRING"
+			            android:id="@+id/now_starring"
 			            android:layout_width="fill_parent"
 			            android:layout_height="wrap_content"
 			            android:layout_margin="7dp"
 			            android:textColor="#fff"
-			            android:textSize="15dp" />
+			            android:textSize="15sp" />
         
 			        <TextView
-			            android:id="@+id/genre"
-			            android:text="GENRE"
+			            android:id="@+id/now_genre"
 			            android:layout_width="fill_parent"
 			            android:layout_height="wrap_content"
 			            android:padding="7dp"
 			            android:textColor="#fff"
-			            android:textSize="15dp" />
+			            android:textSize="15sp" />
 	        
         		</LinearLayout>
         
     		</RelativeLayout>
     
 		    <TextView
-				android:id="@+id/summary"
-			    android:text="SUMMARY"
+				android:id="@+id/now_summary"
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
 			    android:layout_margin="7dp"
 			    android:textColor="#fff"
-			    android:textSize="15dp" />
+			    android:textSize="15sp" />
     
 		    <TextView
 		        android:id="@+id/where"
@@ -95,13 +95,14 @@
 		        android:paddingBottom="0dp"
 		        android:background="#000"
 		        android:textColor="#fff"
-		        android:text="Where are you?"
+		        android:text="@string/whereareyou"
 		        android:textStyle="bold"
-		        android:textSize="17dp" />
+		        android:textSize="17sp" />
     
 		    <ImageView
 				android:background="@drawable/back"
 				android:layout_width="fill_parent"
+				android:contentDescription="@string/contentDescription"
 				android:layout_height="3dp" />
     
 		    <TextView
@@ -112,8 +113,8 @@
 		        android:paddingTop="0dp"
 		        android:background="#a5000000"
 		        android:textColor="#fff"
-		        android:text="Metro Manila"
-		        android:textSize="15dp" />
+		        android:text="@string/metromanila"
+		        android:textSize="15sp" />
     
 		    <TextView
 		        android:id="@+id/luzon"
@@ -123,8 +124,8 @@
 		        android:paddingTop="0dp"
 		        android:background="#a5000000"
 		        android:textColor="#fff"
-		        android:text="Luzon"
-		        android:textSize="15dp" />
+		        android:text="@string/luzon"
+		        android:textSize="15sp" />
     
 		    <TextView
 		        android:id="@+id/vismin"
@@ -134,8 +135,8 @@
 		        android:paddingTop="0dp"
 		        android:background="#a5000000"
 		        android:textColor="#fff"
-		        android:text="VisMin"
-		        android:textSize="15dp" />
+		        android:text="@string/vismin"
+		        android:textSize="15sp" />
     
     	</LinearLayout>
     

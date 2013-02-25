@@ -45,6 +45,11 @@
     <string name="title_activity_visminlocation">Visminlocation</string>
     <string name="title_activity_buyactivity">Buyactivity</string>
 	<string name="tabmenu">TabMenu</string>
+	<string name="contentDescription">content description</string>
+	<string name="whereareyou">Where are you?</string>
+	<string name="metromanila">Metro Manila</string>
+	<string name="luzon">Luzon</string>
+	<string name="vismin">VisMin</string>
 
 
 </resources>
