@@ -2,17 +2,8 @@ package com.sm.database;
 
 public class UserAccount {
 
-	String UserID;
 	String Email;
 	String Password;
-	
-	public String getUserID() {
-		return UserID;
-	}
-	
-	public void setUserID(String userID) {
-		UserID = userID;
-	}
 	
 	public String getEmail() {
 		return Email;

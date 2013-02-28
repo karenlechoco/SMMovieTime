@@ -69,7 +69,7 @@
 
         <!-- SPECIFIC LOCATION/MALL -->
         <activity
-            android:name=".SpecificLocation"
+            android:name=".SpecificLocationActivity"
             android:label="@string/title_activity_specific_location"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >

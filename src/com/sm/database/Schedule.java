@@ -2,68 +2,77 @@ package com.sm.database;
 
 public class Schedule {
 
-	String SpecificLocationCode;
-	String CinemaCode;
-	String MovieCode;
-	String Date;
-	String Time;
-	Float TicketPrice;
-	Integer Vacant_Seats;
+	String generalLocation;
+	String specificLocation;
+	String cinemaName;
+	String movieCode;
+	String date;
+	String time;
+	Float ticketPrice;
+	Integer vacantSeats;
 	
-	public String getSpecificLocationCode() {
-		return SpecificLocationCode;
+	public String getGeneralLocation() {
+		return generalLocation;
 	}
 	
-	public void setSpecificLocationCode(String specificLocationCode) {
-		SpecificLocationCode = specificLocationCode;
+	public void setGeneralLocation(String generalLocation) {
+		this.generalLocation = generalLocation;
 	}
 	
-	public String getCinemaCode() {
-		return CinemaCode;
+	public String getSpecificLocation() {
+		return specificLocation;
 	}
 	
-	public void setCinemaCode(String cinemaCode) {
-		CinemaCode = cinemaCode;
+	public void setSpecificLocation(String specificLocation) {
+		this.specificLocation = specificLocation;
+	}
+	
+	public String getCinemaName() {
+		return cinemaName;
+	}
+	
+	public void setCinemaName(String cinemaName) {
+		this.cinemaName = cinemaName;
 	}
 	
 	public String getMovieCode() {
-		return MovieCode;
+		return movieCode;
 	}
 	
 	public void setMovieCode(String movieCode) {
-		MovieCode = movieCode;
+		this.movieCode = movieCode;
 	}
 	
 	public String getDate() {
-		return Date;
+		return date;
 	}
 	
 	public void setDate(String date) {
-		Date = date;
+		this.date = date;
 	}
 	
 	public String getTime() {
-		return Time;
+		return time;
 	}
 	
 	public void setTime(String time) {
-		Time = time;
+		this.time = time;
 	}
 	
 	public Float getTicketPrice() {
-		return TicketPrice;
+		return ticketPrice;
 	}
 	
 	public void setTicketPrice(Float ticketPrice) {
-		TicketPrice = ticketPrice;
+		this.ticketPrice = ticketPrice;
 	}
 	
-	public Integer getVacant_Seats() {
-		return Vacant_Seats;
+	public Integer getVacantSeats() {
+		return vacantSeats;
 	}
 	
-	public void setVacant_Seats(Integer vacant_Seats) {
-		Vacant_Seats = vacant_Seats;
+	public void setVacantSeats(Integer vacantSeats) {
+		this.vacantSeats = vacantSeats;
 	}
 	
 }

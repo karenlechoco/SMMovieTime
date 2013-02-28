@@ -40,7 +40,7 @@ public class MovieDetails extends Activity {
         			
         			@Override
         			public void onClick(View v) {
-        				i = new Intent(v.getContext(), SpecificLocation.class);
+        				i = new Intent(v.getContext(), SpecificLocationActivity.class);
         				i.putExtra("MovieTitle", title.getText());
         				i.putExtra("general_loc", "Metro Manila");
         				startActivity(i);
@@ -53,7 +53,7 @@ public class MovieDetails extends Activity {
         			
         			@Override
         			public void onClick(View v) {
-        				i = new Intent(v.getContext(), SpecificLocation.class);
+        				i = new Intent(v.getContext(), SpecificLocationActivity.class);
         				i.putExtra("MovieTitle", title.getText());
         				i.putExtra("general_loc", "Luzon");
         				startActivity(i);
@@ -66,7 +66,7 @@ public class MovieDetails extends Activity {
         			
         			@Override
         			public void onClick(View v) {
-        				i = new Intent(v.getContext(), SpecificLocation.class);
+        				i = new Intent(v.getContext(), SpecificLocationActivity.class);
         				i.putExtra("MovieTitle", title.getText());
         				i.putExtra("general_loc", "VisMin");
         				startActivity(i);

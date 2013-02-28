@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class SpecificLocation extends ListActivity {
+public class SpecificLocationActivity extends ListActivity {
 	
 	Intent i;
 	String gen_loc;

@@ -10,8 +10,9 @@ public class DBHelper_ScheduleTable extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "movietime";
 	private static final String TABLE_CINEMA = "schedule";
 	
-	private static final String KEY_SPECLOC_CODE = "specloc_code";
-	private static final String KEY_CINEMA_CODE = "cinema_code";
+	private static final String KEY_GENLOC = "general_location"; //Metro Manila, Luzon, VisMin
+	private static final String KEY_SPECLOC = "specific_location"; //Bicutan, Baguio, Bacolod
+	private static final String KEY_CINEMA = "cinema_name"; //Cinema 1, IMAX, etc
 	private static final String KEY_MOVIE_CODE = "movie_code";
 	private static final String KEY_DATE = "date";
 	private static final String KEY_TIME = "time";
@@ -27,13 +28,14 @@ public class DBHelper_ScheduleTable extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 		String CREATE_CINEMA_TABLE = "CREATE TABLE " + TABLE_CINEMA + "("
-				+ KEY_SPECLOC_CODE + "TEXT,"
-				+ KEY_CINEMA_CODE + "TEXT,"
-				+ KEY_MOVIE_CODE + "TEXT,"
-				+ KEY_DATE + "TEXT,"
-				+ KEY_TIME + "TEXT,"
-				+ KEY_TICKET_PRICE + "TEXT,"
-				+ KEY_VACANT_SEATS + "TEXT,"
+				+ KEY_GENLOC + " TEXT,"
+				+ KEY_SPECLOC + " TEXT,"
+				+ KEY_CINEMA + " TEXT,"
+				+ KEY_MOVIE_CODE + " TEXT,"
+				+ KEY_DATE + " TEXT,"
+				+ KEY_TIME + " TEXT,"
+				+ KEY_TICKET_PRICE + " TEXT,"
+				+ KEY_VACANT_SEATS + " TEXT,"
 				+ ")";
 		db.execSQL(CREATE_CINEMA_TABLE);
 	}

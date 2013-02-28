@@ -8,7 +8,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class DBHelper_MovieTable extends SQLiteOpenHelper {
 	
@@ -41,7 +40,6 @@ public class DBHelper_MovieTable extends SQLiteOpenHelper {
 				+ KEY_MOVIE_STARRING + " TEXT,"
 				+ KEY_MOVIE_STATUS + " TEXT"
 				+ ")";
-		System.out.println(CREATE_TABLE_MOVIE);
 		db.execSQL(CREATE_TABLE_MOVIE);
 	}
 
@@ -52,7 +50,7 @@ public class DBHelper_MovieTable extends SQLiteOpenHelper {
 	}
 
 	public void addMovie (Movie m) {
-		SQLiteDatabase db = getReadableDatabase();		
+		SQLiteDatabase db = getWritableDatabase();		
 
 		ContentValues values = new ContentValues();
 		values.put(KEY_MOVIE_CODE, m.getCode());
@@ -96,7 +94,6 @@ public class DBHelper_MovieTable extends SQLiteOpenHelper {
 				KEY_MOVIE_CODE + "=?",
 				new String[] { code }, null, null, null, null);
 		
-		//Cursor c = db.rawQuery("SELECT * FROM " + TABLE_MOVIE + " WHERE " + KEY_MOVIE_CODE + "='" + code + "'", null);
 		if (c.moveToNext()) {
 			m.setCode(code);
 			m.setGenre(c.getString(c.getColumnIndex(KEY_MOVIE_GENRE)));
@@ -104,7 +101,6 @@ public class DBHelper_MovieTable extends SQLiteOpenHelper {
 			m.setStarring(c.getString(c.getColumnIndex(KEY_MOVIE_STARRING)));
 			m.setSummary(c.getString(c.getColumnIndex(KEY_MOVIE_SUMMARY)));
 			m.setTitle(c.getString(c.getColumnIndex(KEY_MOVIE_TITLE)));
-			Log.d("Summary", m.getSummary());
 		}
 		c.close();
 		return m;
