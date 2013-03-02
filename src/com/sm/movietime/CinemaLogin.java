@@ -15,19 +15,19 @@ import android.widget.Toast;
 public class CinemaLogin extends Activity {
 
 	Intent i;
+	EditText email, pass;
+	DBHelper_UserAccountTable tbl;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cinema_login);
         
-        final EditText email = (EditText)findViewById(R.id.email);
-        final EditText pass = (EditText)findViewById(R.id.password);
+        email = (EditText)findViewById(R.id.email);
+        pass = (EditText)findViewById(R.id.password);
         
-        final DBHelper_UserAccountTable tbl = new DBHelper_UserAccountTable(getBaseContext());
-        
-        final UserAccount u = new UserAccount();
-            
+        tbl = new DBHelper_UserAccountTable(getBaseContext());
+                    
         final Button reg = (Button)findViewById(R.id.register_button);
         reg.setOnClickListener(new View.OnClickListener() {
 			
@@ -44,13 +44,14 @@ public class CinemaLogin extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				UserAccount u = new UserAccount();
 				u.setEmail(email.getText().toString());
 		        u.setPassword(pass.getText().toString());
-				//if (tbl.verifyLogin(u)) {
+				if (tbl.verifyLogin(u)) {
 					i = getIntent();
 					i.setClass(getBaseContext(), PurchaseBreakdown.class);
 					startActivity(i);
-				//} else Toast.makeText(getBaseContext(), "Invalid Login", Toast.LENGTH_LONG).show();
+				} else Toast.makeText(getBaseContext(), "Invalid Login", Toast.LENGTH_LONG).show();
 			}
 		});
         
