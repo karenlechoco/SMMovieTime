@@ -4,15 +4,12 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sm.database.*;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -22,6 +19,9 @@ import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.sm.database.DBHelper_MovieTable;
+import com.sm.database.Movie;
 
 @SuppressWarnings("deprecation")
 public class ComingSoon extends Activity {
@@ -92,7 +92,7 @@ public class ComingSoon extends Activity {
 				//check if clicked poster is one at the center
 				//if yes, go to moviedetails.class
 				//if no, the unselected poster becomes center
-				if (frame.contains(x, y) && arg2==currentMovie) {
+				if (arg2==currentMovie) {
 					btn_intnt = new Intent(getBaseContext(), MovieDetails.class);
 					btn_intnt.putExtra("MovieTitle", soon_movies.get(currentMovie).getTitle());
 					btn_intnt.putExtra("MoviePoster", soon.get(currentMovie));
@@ -104,19 +104,6 @@ public class ComingSoon extends Activity {
 				}				
 			}
 		});
-    }
-
-    @Override
-	public boolean onTouchEvent(MotionEvent event) {
-    	x = (int)event.getRawX();
-        y = (int)event.getRawY();
-		return super.onTouchEvent(event);
-	}
-    
-    public boolean onTouch(View v, MotionEvent event) {
-        x = (int)event.getRawX();
-        y = (int)event.getRawY();
-        return false;
     }
 
 	@Override

@@ -21,21 +21,10 @@ public class DBHelper_UserAccountTable extends SQLiteOpenHelper {
 	}
 	
 	@Override
-	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-		String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" 
-				+ KEY_EMAIL + " TEXT PRIMARY KEY,"
-				+ KEY_PASSWORD + " TEXT"
-				+ ")";
-		Log.d("APP", CREATE_TABLE);
-		db.execSQL(CREATE_TABLE);
-	}
+	public void onCreate(SQLiteDatabase db) {}
 
 	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_NAME);
-		onCreate(db);
-	}
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
 	
 	public void addAccount (UserAccount u) {
 		SQLiteDatabase db = getWritableDatabase();
@@ -49,7 +38,7 @@ public class DBHelper_UserAccountTable extends SQLiteOpenHelper {
 	}
 	
 	public boolean verifyLogin (UserAccount u) {
-		SQLiteDatabase db = getWritableDatabase();
+		SQLiteDatabase db = getReadableDatabase();
 		
 		boolean r = false;
 		

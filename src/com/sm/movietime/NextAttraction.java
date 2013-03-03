@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -101,7 +100,7 @@ public class NextAttraction extends Activity {
 				//check if clicked poster is one at the center
 				//if yes, go to moviedetails.class
 				//if no, the unselected poster becomes center
-				if (frame.contains(x, y) && arg2==currentMovie) {
+				if (arg2==currentMovie) {
 					btn_intnt = new Intent(getBaseContext(), MovieDetails.class);
 					btn_intnt.putExtra("MovieTitle", next_movies.get(currentMovie).getTitle());
 					btn_intnt.putExtra("MoviePoster", next.get(currentMovie));
@@ -114,20 +113,6 @@ public class NextAttraction extends Activity {
 			}
 		});
         
-    }
-
-    @Override
-	public boolean onTouchEvent(MotionEvent event) {
-		// TODO Auto-generated method stub
-    	x = (int)event.getRawX();
-        y = (int)event.getRawY();
-		return super.onTouchEvent(event);
-	}
-    
-    public boolean onTouch(View v, MotionEvent event) {
-        x = (int)event.getRawX();
-        y = (int)event.getRawY();
-        return false;
     }
 
 	@Override

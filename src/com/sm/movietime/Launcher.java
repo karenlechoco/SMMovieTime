@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 
 import com.sm.database.DBHelper_MovieTable;
 import com.sm.database.DBHelper_UserAccountTable;
+import com.sm.database.DB_Initializer;
 import com.sm.database.Movie;
 import com.sm.database.Schedule;
 import com.sm.database.UserAccount;
@@ -24,6 +25,7 @@ public class Launcher extends Activity {
         setContentView(R.layout.activity_launcher);
         bar = (ProgressBar)findViewById(R.id.progressBar1);
         bar.setMax(10);
+        DB_Initializer db_init = new DB_Initializer(getBaseContext());
         new PopulateMovieTable().execute(new String[]{});
         //new PopulateScheduleTable().execute(new String[]{});
         new PopulateUserTable().execute(new String[]{});

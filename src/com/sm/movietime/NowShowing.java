@@ -9,9 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -52,10 +50,6 @@ public class NowShowing extends Activity {
         
         DBHelper_MovieTable tbl = new DBHelper_MovieTable(this);
 		now_movies = tbl.getMovies("now");
-		
-		for (int i=0; i<now_movies.size(); i++) {
-			Log.d("APP", now_movies.get(i).getSummary());
-		}
         
         Field[] fields = R.drawable.class.getFields();
         now = new ArrayList<Integer>();
@@ -105,7 +99,7 @@ public class NowShowing extends Activity {
 				//check if clicked poster is one at the center
 				//if yes, go to moviedetails.class
 				//if no, the unselected poster becomes center
-				if (frame.contains(x, y) && arg2==currentMovie) {
+				if (arg2==currentMovie) {
 					btn_intnt = new Intent(getBaseContext(), MovieDetails.class);
 					btn_intnt.putExtra("MovieTitle", now_movies.get(currentMovie).getTitle());
 					btn_intnt.putExtra("MoviePoster", now.get(currentMovie));
@@ -117,20 +111,6 @@ public class NowShowing extends Activity {
 				}				
 			}
 		});        
-    }
-
-    @Override
-	public boolean onTouchEvent(MotionEvent event) {
-		// TODO Auto-generated method stub
-    	x = (int)event.getRawX();
-        y = (int)event.getRawY();
-		return super.onTouchEvent(event);
-	}
-    
-    public boolean onTouch(View v, MotionEvent event) {
-        x = (int)event.getRawX();
-        y = (int)event.getRawY();
-        return false;
     }
 
 	@Override

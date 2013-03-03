@@ -25,26 +25,13 @@ public class DBHelper_ScheduleTable extends SQLiteOpenHelper {
 	}
 	
 	@Override
-	public void onCreate(SQLiteDatabase db) {
-		// TODO Auto-generated method stub
-		String CREATE_CINEMA_TABLE = "CREATE TABLE " + TABLE_CINEMA + "("
-				+ KEY_GENLOC + " TEXT,"
-				+ KEY_SPECLOC + " TEXT,"
-				+ KEY_CINEMA + " TEXT,"
-				+ KEY_MOVIE_CODE + " TEXT,"
-				+ KEY_DATE + " TEXT,"
-				+ KEY_TIME + " TEXT,"
-				+ KEY_TICKET_PRICE + " TEXT,"
-				+ KEY_VACANT_SEATS + " TEXT,"
-				+ ")";
-		db.execSQL(CREATE_CINEMA_TABLE);
-	}
+	public void onCreate(SQLiteDatabase db) {}
 
 	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO Auto-generated method stub
-		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_CINEMA);
-		onCreate(db);
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
+	
+	public void addSchedule (Schedule s) {
+		
 	}
 
 }
