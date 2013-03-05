@@ -15,27 +15,20 @@
     		android:layout_height="fill_parent"
     		android:orientation="vertical" >
     
-		    <ImageView
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"/>
+
 		    
 		    <TextView
 		        android:id="@+id/movietitle"
 		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
+		        android:layout_height="35dp"
 		        android:padding="5dp"
 		        android:textStyle="bold"
-		        android:background="#000"
-		        android:text=""
+		        android:background="@drawable/emboss"
+		        android:text="Movie"
 		        android:textColor="#fff"
 		        android:textSize="15dp" />
 		
-		    <ImageView
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"
-		        android:layout_marginBottom="10dp" />
+		    
 		    
 		    <TextView
 		        android:id="@+id/location_crumbs"
@@ -51,7 +44,7 @@
 		        android:id="@+id/cinema_list"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:background="#000"
+		        android:background="@drawable/transparentborder"
 		        android:orientation="vertical"
 		        android:padding="5dp" >
 		        
@@ -94,7 +87,8 @@
 		                <TextView
 				            android:id="@+id/time1"
 				            android:text="12:00"
-				            android:textColor="#fff"
+				            android:textColor="#3BB9FF"
+				            android:textStyle="italic"
 				            android:layout_marginRight="6dp"
 				            android:layout_width="wrap_content"
 				            android:layout_height="wrap_content" />
@@ -102,7 +96,8 @@
 		                <TextView
 				            android:id="@+id/time1"
 				            android:text="2:30"
-				            android:textColor="#fff"
+				            android:textColor="#3BB9FF"
+				            android:textStyle="italic"
 				            android:layout_marginRight="6dp"
 				            android:layout_width="wrap_content"
 				            android:layout_height="wrap_content" />
@@ -110,7 +105,8 @@
 		                <TextView
 				            android:id="@+id/time1"
 				            android:text="7:00"
-				            android:textColor="#fff"
+				            android:textColor="#3BB9FF"
+				            android:textStyle="italic"
 				            android:layout_marginRight="6dp"
 				            android:layout_width="wrap_content"
 				            android:layout_height="wrap_content" />

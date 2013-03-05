@@ -15,37 +15,31 @@
             android:layout_width="fill_parent"
         	android:layout_height="wrap_content" >
 
-		    <ImageView
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:contentDescription="@string/contentDescription"
-		        android:layout_height="3dp"/>
+		   
     
 		    <TextView
 		        android:id="@+id/now_movietitle"
 		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
+		        android:text="Movie"
+		        android:layout_height="35dp"
 		        android:padding="5dp"
 		        android:textStyle="bold"
-		        android:text=""
+		        android:background="@drawable/emboss"
 		        android:textColor="#fff"
 		        android:textSize="22sp" />
 
-		    <ImageView
-		        android:id="@+id/border"
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"
-		        android:contentDescription="@string/contentDescription"
-		        android:layout_marginBottom="7dp" />
+		   
     
 		    <RelativeLayout
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:padding="5dp" >
+		        android:background="@drawable/transparentborder"
+		        android:padding="5dp"
+		        android:layout_margin="10dp" >
         
 		        <ImageView
 			        android:id="@+id/now_poster"
+			        android:src="@drawable/ic_launcher"
 			        android:layout_below="@+id/border"
 			        android:layout_width="150dp"
 			        android:paddingLeft="5dp"
@@ -64,6 +58,7 @@
 			            android:layout_width="fill_parent"
 			            android:layout_height="wrap_content"
 			            android:layout_margin="7dp"
+			            android:text="STARRING"
 			            android:textColor="#fff"
 			            android:textSize="15sp" />
         
@@ -72,20 +67,35 @@
 			            android:layout_width="fill_parent"
 			            android:layout_height="wrap_content"
 			            android:padding="7dp"
+			            android:text="GENRE"
 			            android:textColor="#fff"
 			            android:textSize="15sp" />
 	        
         		</LinearLayout>
-        
-    		</RelativeLayout>
-    
-		    <TextView
+        		
+		        	<TextView
 				android:id="@+id/now_summary"
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
+			    android:layout_below="@+id/now_poster"
+			    android:text="SUMMARY"
 			    android:layout_margin="7dp"
 			    android:textColor="#fff"
 			    android:textSize="15sp" />
+        
+    		</RelativeLayout>
+    
+		    <RelativeLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:background="@drawable/transparentborder"
+		        android:padding="5dp"
+		        android:layout_margin="10dp" >
+		        	
+		     <LinearLayout
+		          android:orientation="vertical"
+            	  android:layout_width="fill_parent"
+        		  android:layout_height="wrap_content" >
     
 		    <TextView
 		        android:id="@+id/where"
@@ -99,11 +109,7 @@
 		        android:textStyle="bold"
 		        android:textSize="17sp" />
     
-		    <ImageView
-				android:background="@drawable/transparentborder"
-				android:layout_width="fill_parent"
-				android:contentDescription="@string/contentDescription"
-				android:layout_height="3dp" />
+		    
     
 		    <TextView
 		        android:id="@+id/metro_manila"
@@ -111,7 +117,6 @@
 		        android:layout_height="wrap_content"
 		        android:padding="10dp"
 		        android:paddingTop="0dp"
-		        android:background="#a5000000"
 		        android:textColor="#fff"
 		        android:text="@string/metromanila"
 		        android:textSize="15sp" />
@@ -122,7 +127,6 @@
 		        android:layout_height="wrap_content"
 		        android:padding="10dp"
 		        android:paddingTop="0dp"
-		        android:background="#a5000000"
 		        android:textColor="#fff"
 		        android:text="@string/luzon"
 		        android:textSize="15sp" />
@@ -133,10 +137,13 @@
 		        android:layout_height="wrap_content"
 		        android:padding="10dp"
 		        android:paddingTop="0dp"
-		        android:background="#a5000000"
 		        android:textColor="#fff"
 		        android:text="@string/vismin"
 		        android:textSize="15sp" />
+		    
+		    </LinearLayout>
+		    
+		    </RelativeLayout>
     
     	</LinearLayout>
     

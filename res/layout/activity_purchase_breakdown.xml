@@ -15,57 +15,45 @@
     		android:layout_height="fill_parent"
     		android:orientation="vertical" >
     		
-	        <ImageView
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"/>
 		    
 		    <TextView
 		        android:id="@+id/movietitle"
 		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:background="#000"
+		        android:layout_height="35dp"
+		        android:background="@drawable/emboss"
 		        android:padding="5dp"
 		        android:textStyle="bold"
 		        android:text="@string/movietitle"
 		        android:textColor="#fff"
 		        android:textSize="15dp" />
 		
-		    <ImageView
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"
-		        android:layout_marginBottom="5dp" />
 		    
 		    <TextView
 		        android:id="@+id/location_crumbs"
 		        android:text=""
 		        android:textColor="#fff"
+		        android:layout_marginTop="10dp"
 		        android:background="#000"
 		        android:padding="5dp"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_marginBottom="5dp" />
 		    
-		    <TextView
+		   
+		     <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/transparentborder"
+		        android:orientation="vertical" >
+		        
+		         <TextView
 		        android:id="@+id/guarseat"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:layout_marginTop="15dp"
 		        android:background="#000"
-		        android:padding="10dp"
+		        android:padding="5dp"
 		        android:text="General Information"
 		        android:textColor="#fff" />
-		    <ImageView
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"/>
-		    
-		    <LinearLayout
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:background="#a5000000"
-		        android:orientation="vertical" >
 		        
 		        <TextView
 			        android:id="@+id/smbranch"
@@ -181,21 +169,17 @@
 		    <TextView
 		        android:id="@+id/resseat"
 		        android:text="@string/reserve_seats"
-		        android:background="#000"
+		        android:background="#191970"
 		        android:textColor="#fff"
 		        android:padding="7dp"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="15dp" />
-		    <ImageView
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"/>
 		    
 		    <LinearLayout
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:background="#a5000000"
+		        android:background="@drawable/transparentborder"
 		        android:orientation="vertical" >
 		        
 		        <TextView
@@ -218,7 +202,13 @@
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
 		        
-		    </LinearLayout>		    	    
+		    </LinearLayout>	
+		    
+		    <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/transparentborder"
+		        android:orientation="vertical" >	    	    
 		    
 		    <TextView
 		        android:id="@+id/payopt"
@@ -229,10 +219,6 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="15dp" />
-		    <ImageView
-		        android:background="@drawable/transparentborder"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"/>
 		
 		    <RadioGroup
 		        android:layout_width="fill_parent"
@@ -285,6 +271,8 @@
 		        android:layout_margin="15dp"
 		        android:gravity="center"
 		        android:text="Purchase >>" />
+		    
+		    </LinearLayout>
 		    
         </LinearLayout>
     </ScrollView>

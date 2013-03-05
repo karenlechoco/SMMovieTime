@@ -21,7 +21,7 @@
 		        android:layout_height="35dp"
 		        android:padding="5dp"
 		        android:textStyle="bold"
-		        android:text="Paulilala"
+		        android:text="Movie"
 		        android:background="@drawable/emboss"
 		        android:textColor="#fff"
 		        android:textSize="22dp" />
@@ -74,7 +74,7 @@
 				    android:layout_height="wrap_content"
 				    android:layout_below="@+id/poster"
 				    android:textColor="#fff"
-				    android:textSize="15dp" />
+				    android:textSize="15sp" />
         
     		</RelativeLayout>
     

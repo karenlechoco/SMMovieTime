@@ -48,7 +48,7 @@ public final class R {
     }
     public static final class id {
         public static final int availableseats=0x7f090039;
-        public static final int border=0x7f090025;
+        public static final int border=0x7f090026;
         public static final int branchcode=0x7f09002d;
         public static final int buymovietitle=0x7f090000;
         public static final int cancel_res_button=0x7f09003d;
@@ -93,7 +93,7 @@ public final class R {
         public static final int next=0x7f09003c;
         public static final int now_genre=0x7f090028;
         public static final int now_movietitle=0x7f090024;
-        public static final int now_poster=0x7f090026;
+        public static final int now_poster=0x7f090025;
         public static final int now_showing_layout=0x7f090019;
         public static final int now_starring=0x7f090027;
         public static final int now_summary=0x7f090029;
