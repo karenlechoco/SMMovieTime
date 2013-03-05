@@ -14,37 +14,28 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
         	android:layout_height="wrap_content" >
-
-		    <ImageView
-		        android:background="@drawable/back"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"/>
     
 		    <TextView
 		        android:id="@+id/movietitle"
 		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
+		        android:layout_height="35dp"
 		        android:padding="5dp"
 		        android:textStyle="bold"
-		        android:text=""
+		        android:text="Paulilala"
+		        android:background="@drawable/emboss"
 		        android:textColor="#fff"
 		        android:textSize="22dp" />
-
-		    <ImageView
-		        android:id="@+id/border"
-		        android:background="@drawable/back"
-		        android:layout_width="fill_parent"
-		        android:layout_height="3dp"
-		        android:layout_marginBottom="7dp" />
     
 		    <RelativeLayout
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:padding="5dp" >
+		        android:background="@drawable/transparentborder"
+		        android:padding="5dp"
+		        android:layout_margin="10dp" >
         
 		        <ImageView
+		            android:src="@drawable/ic_launcher"
 			        android:id="@+id/poster"
-			        android:layout_below="@+id/border"
 			        android:layout_width="150dp"
 			        android:paddingLeft="5dp"
 			        android:layout_height="wrap_content"
@@ -75,17 +66,19 @@
 			            android:textSize="15dp" />
 	        
         		</LinearLayout>
+        		
+		        <TextView
+					android:id="@+id/summary"
+				    android:text="SUMMARY"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_below="@+id/poster"
+				    android:textColor="#fff"
+				    android:textSize="15dp" />
         
     		</RelativeLayout>
     
-		    <TextView
-				android:id="@+id/summary"
-			    android:text="SUMMARY"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:layout_margin="7dp"
-			    android:textColor="#fff"
-			    android:textSize="15dp" />
+		    
         
     	</LinearLayout>
     

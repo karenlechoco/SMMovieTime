@@ -19,8 +19,8 @@ public final class R {
         public static final int padding_small=0x7f050000;
     }
     public static final class drawable {
-        public static final int back=0x7f020000;
-        public static final int back_repeat=0x7f020001;
+        public static final int back_repeat=0x7f020000;
+        public static final int emboss=0x7f020001;
         public static final int global_bg_landscape=0x7f020002;
         public static final int global_bg_portrait=0x7f020003;
         public static final int ic_action_search=0x7f020004;
@@ -44,10 +44,11 @@ public final class R {
         public static final int soon_gijoetwo=0x7f020016;
         public static final int soon_ironmanthree=0x7f020017;
         public static final int soon_ufo=0x7f020018;
+        public static final int transparentborder=0x7f020019;
     }
     public static final class id {
         public static final int availableseats=0x7f090039;
-        public static final int border=0x7f090020;
+        public static final int border=0x7f090025;
         public static final int branchcode=0x7f09002d;
         public static final int buymovietitle=0x7f090000;
         public static final int cancel_res_button=0x7f09003d;
@@ -72,7 +73,7 @@ public final class R {
         public static final int editText9=0x7f090015;
         public static final int email=0x7f090009;
         public static final int endtime=0x7f090037;
-        public static final int genre=0x7f090023;
+        public static final int genre=0x7f090022;
         public static final int grosticketprice=0x7f090034;
         public static final int guarseat=0x7f09002b;
         public static final int imageView1=0x7f09001d;
@@ -91,14 +92,14 @@ public final class R {
         public static final int movietitle=0x7f09001f;
         public static final int next=0x7f09003c;
         public static final int now_genre=0x7f090028;
-        public static final int now_movietitle=0x7f090025;
+        public static final int now_movietitle=0x7f090024;
         public static final int now_poster=0x7f090026;
         public static final int now_showing_layout=0x7f090019;
         public static final int now_starring=0x7f090027;
         public static final int now_summary=0x7f090029;
         public static final int password=0x7f09000a;
         public static final int payopt=0x7f09003b;
-        public static final int poster=0x7f090021;
+        public static final int poster=0x7f090020;
         public static final int progressBar1=0x7f09001e;
         public static final int register_button=0x7f09000c;
         public static final int reserve_hscroll=0x7f09003f;
@@ -110,9 +111,9 @@ public final class R {
         public static final int signup_submit=0x7f090018;
         public static final int smbranch=0x7f09002c;
         public static final int smname=0x7f090048;
-        public static final int starring=0x7f090022;
+        public static final int starring=0x7f090021;
         public static final int starttime=0x7f090036;
-        public static final int summary=0x7f090024;
+        public static final int summary=0x7f090023;
         public static final int ticket_price=0x7f090043;
         public static final int ticketprice=0x7f090032;
         public static final int time1=0x7f090047;

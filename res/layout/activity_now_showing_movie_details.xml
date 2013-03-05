@@ -16,7 +16,7 @@
         	android:layout_height="wrap_content" >
 
 		    <ImageView
-		        android:background="@drawable/back"
+		        android:background="@drawable/transparentborder"
 		        android:layout_width="fill_parent"
 		        android:contentDescription="@string/contentDescription"
 		        android:layout_height="3dp"/>
@@ -33,7 +33,7 @@
 
 		    <ImageView
 		        android:id="@+id/border"
-		        android:background="@drawable/back"
+		        android:background="@drawable/transparentborder"
 		        android:layout_width="fill_parent"
 		        android:layout_height="3dp"
 		        android:contentDescription="@string/contentDescription"
@@ -100,7 +100,7 @@
 		        android:textSize="17sp" />
     
 		    <ImageView
-				android:background="@drawable/back"
+				android:background="@drawable/transparentborder"
 				android:layout_width="fill_parent"
 				android:contentDescription="@string/contentDescription"
 				android:layout_height="3dp" />

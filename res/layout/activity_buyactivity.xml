@@ -6,7 +6,7 @@
     android:background="@drawable/global_bg_portrait" >
 
     <ImageView
-        android:background="@drawable/back"
+        android:background="@drawable/transparentborder"
         android:layout_width="fill_parent"
         android:layout_height="3dp"/>
     
@@ -21,7 +21,7 @@
         android:textSize="15dp" />
 
     <ImageView
-        android:background="@drawable/back"
+        android:background="@drawable/transparentborder"
         android:layout_width="fill_parent"
         android:layout_height="3dp"
         android:layout_marginBottom="10dp" />
@@ -38,7 +38,7 @@
         android:textSize="14dp" />
     
     <ImageView
-		android:background="@drawable/back"
+		android:background="@drawable/transparentborder"
 		android:layout_width="fill_parent"
 		android:layout_height="3dp" />
     

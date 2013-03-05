@@ -98,7 +98,7 @@ public class SpecificLocationActivity extends ListActivity {
         header.setTypeface(null, Typeface.BOLD);
         
         ImageView bborder = new ImageView(getBaseContext());
-        bborder.setImageResource(R.drawable.back);
+        bborder.setImageResource(R.drawable.transparentborder);
         
         LinearLayout ll = new LinearLayout(getBaseContext());
         ll.setOrientation(LinearLayout.VERTICAL);
