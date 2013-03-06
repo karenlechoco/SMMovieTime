@@ -14,6 +14,13 @@ public final class R {
     public static final class attr {
     }
     public static final class dimen {
+        /** 
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    
+         */
+        public static final int activity_horizontal_margin=0x7f050003;
+        public static final int activity_vertical_margin=0x7f050004;
         public static final int padding_large=0x7f050002;
         public static final int padding_medium=0x7f050001;
         public static final int padding_small=0x7f050000;
@@ -47,6 +54,7 @@ public final class R {
         public static final int transparentborder=0x7f020019;
     }
     public static final class id {
+        public static final int action_settings=0x7f09004a;
         public static final int availableseats=0x7f090039;
         public static final int border=0x7f090026;
         public static final int branchcode=0x7f09002d;
@@ -154,8 +162,10 @@ public final class R {
         public static final int activity_sample=0x7f08000c;
         public static final int activity_schedules=0x7f08000d;
         public static final int activity_specific_location=0x7f08000e;
+        public static final int agree_terms=0x7f08000f;
     }
     public static final class string {
+        public static final int action_settings=0x7f060033;
         public static final int address=0x7f060014;
         public static final int app_name=0x7f060000;
         public static final int bdate=0x7f060016;
@@ -188,6 +198,7 @@ public final class R {
         public static final int save=0x7f06000b;
         public static final int sm_login=0x7f06000e;
         public static final int tabmenu=0x7f06002c;
+        public static final int title_activity_agree_terms=0x7f060032;
         public static final int title_activity_buyactivity=0x7f06002b;
         public static final int title_activity_cinema_login=0x7f06000d;
         public static final int title_activity_cinema_signup=0x7f060024;

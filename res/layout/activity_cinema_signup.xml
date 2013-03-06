@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/global_bg_portrait"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="10dp" >
+    android:layout_height="fill_parent" >
     
     <ScrollView
         android:layout_height="wrap_content"
@@ -17,10 +16,8 @@
 		    <RelativeLayout
 		        android:id="@+id/layout1"
 		        android:orientation="horizontal"
-		        android:layout_height="85dp"
+		        android:layout_height="75dp"
 		        android:layout_width="fill_parent"
-		        android:layout_marginBottom="7dp"
-		        android:paddingBottom="5dp"
 		        android:background="@drawable/emboss" >
 		    
 			    <TextView
@@ -33,14 +30,15 @@
 			        android:layout_height="wrap_content"
 			        android:layout_alignParentLeft="true"
 			        android:layout_centerVertical="true"
-			        android:padding="5dp" />
+			        android:paddingLeft="10dp" />
 			    
 			    <ImageView
 			        android:id="@+id/img1"
-			        android:layout_width="60dp"
-			        android:layout_height="90dp"
+			        android:layout_width="80dp"
+			        android:layout_height="wrap_content"
 			        android:layout_alignParentRight="true"
-			        android:src="@drawable/logo" />
+			        android:src="@drawable/logo" 
+			        android:padding="10dp" />
         
     		</RelativeLayout>
     
@@ -50,8 +48,18 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:padding="20dp"
+		        android:layout_margin="10dp"
 		        android:background="@drawable/transparentborder"
 		        android:orientation="vertical" >
+			    
+    		    <TextView
+					android:text="NOTE: Fields with (*) are required."
+				    android:textColor="#3BB9FF"
+				    android:textStyle="italic"
+				    android:textSize="12dp"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content" 
+				    android:layout_marginBottom="8dp" />
 		        
 		        <TextView
 		        	android:text="First Name *"
@@ -243,7 +251,7 @@
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
 		            android:layout_marginBottom="8dp" />
-		        
+		       	            
 		        <Button
 		            android:id="@+id/signup_submit"
 		            android:layout_height="wrap_content"

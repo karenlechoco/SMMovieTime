@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sm.movietime"
     android:versionCode="1"
@@ -6,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,7 +17,7 @@
 
         <!-- LAUNCHER -->
         <activity
-            android:name=".Launcher"
+            android:name="com.sm.movietime.Launcher"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -26,10 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <!-- TAB -->
         <activity
-            android:name=".TabMenu"
+            android:name="com.sm.movietime.TabMenu"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -37,7 +38,7 @@
 
         <!-- NOW SHOWING -->
         <activity
-            android:name=".NowShowing"
+            android:name="com.sm.movietime.NowShowing"
             android:label="@string/title_activity_now_showing"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -45,7 +46,7 @@
 
         <!-- NEXT ATTRACTION -->
         <activity
-            android:name=".NextAttraction"
+            android:name="com.sm.movietime.NextAttraction"
             android:label="@string/title_activity_next_attraction"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -53,7 +54,7 @@
 
         <!-- COMING SOON -->
         <activity
-            android:name=".ComingSoon"
+            android:name="com.sm.movietime.ComingSoon"
             android:label="@string/title_activity_coming_soon"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -61,7 +62,7 @@
 
         <!-- MOVIE DETAILS -->
         <activity
-            android:name=".MovieDetails"
+            android:name="com.sm.movietime.MovieDetails"
             android:label="@string/title_activity_movie_details"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -69,7 +70,7 @@
 
         <!-- SPECIFIC LOCATION/MALL -->
         <activity
-            android:name=".SpecificLocationActivity"
+            android:name="com.sm.movietime.SpecificLocationActivity"
             android:label="@string/title_activity_specific_location"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -80,7 +81,7 @@
 
         <!-- SCHEDULES -->
         <activity
-            android:name=".Schedules"
+            android:name="com.sm.movietime.Schedules"
             android:label="@string/title_activity_schedules"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -91,7 +92,7 @@
 
         <!-- PURCHASE BREAKDOWN: GUARANTEED/RESERVED SEATING -->
         <activity
-            android:name=".PurchaseBreakdown"
+            android:name="com.sm.movietime.PurchaseBreakdown"
             android:label="@string/title_activity_purchase_breakdown"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -102,19 +103,18 @@
 
         <!-- RESERVE SEATS -->
         <activity
-            android:name=".ReserveSeats"
+            android:name="com.sm.movietime.ReserveSeats"
             android:label="@string/title_activity_reserve_seats"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sm.movietime.PurchaseBreakdown" />
-            
         </activity>
 
         <!-- CINEMA LOGIN -->
         <activity
-            android:name=".CinemaLogin"
+            android:name="com.sm.movietime.CinemaLogin"
             android:label="@string/title_activity_cinema_login"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -125,7 +125,7 @@
 
         <!-- SIGNUP -->
         <activity
-            android:name=".CinemaSignup"
+            android:name="com.sm.movietime.CinemaSignup"
             android:label="@string/title_activity_cinema_signup"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
@@ -133,7 +133,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sm.movietime.CinemaLogin" />
         </activity>
-        
+        <activity
+            android:name="com.sm.movietime.AgreeTerms"
+            android:label="@string/title_activity_agree_terms" >
+        </activity>
     </application>
 
 </manifest>

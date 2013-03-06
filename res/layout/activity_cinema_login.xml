@@ -6,8 +6,7 @@
     
     <ScrollView 
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" 
-        android:background="@drawable/transparentborder">
+        android:layout_height="fill_parent" >
         
         <RelativeLayout
             android:layout_height="fill_parent"
@@ -17,10 +16,8 @@
             <RelativeLayout
 		        android:id="@+id/layout1"
 		        android:orientation="horizontal"
-		        android:layout_height="85dp"
+		        android:layout_height="75dp"
 		        android:layout_width="fill_parent"
-		        android:paddingBottom="10dp"
-		        android:padding="5dp"
 		        android:background="@drawable/emboss" >
 		    
 			    <TextView
@@ -28,23 +25,22 @@
 			        android:text="Login to your\nSM Cinema Account"
 			        android:textColor="#fff"
 			        android:layout_gravity="center"
-			        android:textSize="13dp"
+			        android:textSize="17dp"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 			        android:layout_alignParentLeft="true"
 			        android:layout_centerVertical="true"
-			        android:padding="5dp" />
+			        android:paddingLeft="10dp" />
 			    
 			    <ImageView
 			        android:id="@+id/img1"
-			        android:layout_width="60dp"
+			        android:layout_width="80dp"
 			        android:layout_height="wrap_content"
 			        android:layout_alignParentRight="true"
-			        android:src="@drawable/logo" />
+			        android:src="@drawable/logo" 
+			        android:padding="10dp" />
 		        
 		    </RelativeLayout>
-		    
-            
 		    
 		    <LinearLayout
 		        android:id="@+id/layout2"
@@ -52,7 +48,9 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:padding="20dp"
-		        android:orientation="vertical" >
+		        android:layout_margin="10dp"
+		        android:orientation="vertical" 
+		        android:background="@drawable/transparentborder" >
 		        
 		        <TextView
 		        	android:text="Email Address"
@@ -82,39 +80,39 @@
 		            android:id="@+id/password"
 		            android:layout_width="match_parent"
 		            android:layout_height="wrap_content"
-		            android:inputType="textPassword" />
+		            android:inputType="textPassword" 
+		            android:layout_marginBottom="15dp" />
+		        
+		        <LinearLayout
+		        	android:orientation="horizontal"
+		        	android:layout_below="@+id/layout2"
+		        	android:layout_gravity="center"
+		        	android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content" >
+		        
+			        <Button
+				        android:id="@+id/login_button"
+				        android:text="@string/login"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content" />
+			        
+			        <TextView
+			            android:text="OR"
+			            android:layout_gravity="center"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp" />
+			        
+			        <Button
+				        android:id="@+id/register_button"
+				        android:text="@string/register"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content" />
+		        
+		    	</LinearLayout>
 		        
 		    </LinearLayout>
-		    
-		    <LinearLayout
-		        android:orientation="horizontal"
-		        android:layout_below="@+id/layout2"
-		        android:layout_centerHorizontal="true"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_marginBottom="7dp" >
-		        
-		        <Button
-			        android:id="@+id/login_button"
-			        android:text="@string/login"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content" />
-		        
-		        <TextView
-		            android:text="OR"
-		            android:layout_gravity="center"
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:layout_margin="10dp" />
-		        
-		        <Button
-			        android:id="@+id/register_button"
-			        android:text="@string/register"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content" />
-		        
-		    </LinearLayout>
-            
+		                
         </RelativeLayout>
         
     </ScrollView>    

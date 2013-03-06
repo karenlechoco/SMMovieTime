@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">SM MovieTime</string>
@@ -44,12 +45,13 @@
     <string name="title_activity_luzonlocation">Luzonlocation</string>
     <string name="title_activity_visminlocation">Visminlocation</string>
     <string name="title_activity_buyactivity">Buyactivity</string>
-	<string name="tabmenu">TabMenu</string>
-	<string name="contentDescription">content description</string>
-	<string name="whereareyou">Where are you?</string>
-	<string name="metromanila">Metro Manila</string>
-	<string name="luzon">Luzon</string>
-	<string name="vismin">VisMin</string>
-
+    <string name="tabmenu">TabMenu</string>
+    <string name="contentDescription">content description</string>
+    <string name="whereareyou">Where are you?</string>
+    <string name="metromanila">Metro Manila</string>
+    <string name="luzon">Luzon</string>
+    <string name="vismin">VisMin</string>
+    <string name="title_activity_agree_terms">AgreeTerms</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

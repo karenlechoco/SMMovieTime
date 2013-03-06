@@ -14,8 +14,7 @@
             android:layout_width="fill_parent"
     		android:layout_height="fill_parent"
     		android:orientation="vertical" >
-    		
-		    
+    				    
 		    <TextView
 		        android:id="@+id/movietitle"
 		        android:layout_width="fill_parent"
@@ -26,8 +25,7 @@
 		        android:text="@string/movietitle"
 		        android:textColor="#fff"
 		        android:textSize="15dp" />
-		
-		    
+				    
 		    <TextView
 		        android:id="@+id/location_crumbs"
 		        android:text=""
@@ -36,24 +34,23 @@
 		        android:background="#000"
 		        android:padding="5dp"
 		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_marginBottom="5dp" />
-		    
-		   
+		        android:layout_height="wrap_content" />
+		    		   
 		     <LinearLayout
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:background="@drawable/transparentborder"
-		        android:orientation="vertical" >
+		        android:orientation="vertical" 
+		        android:layout_margin="10dp" >
 		        
 		         <TextView
-		        android:id="@+id/guarseat"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:background="#000"
-		        android:padding="5dp"
-		        android:text="General Information"
-		        android:textColor="#fff" />
+			        android:id="@+id/guarseat"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:background="#000"
+			        android:padding="5dp"
+			        android:text="General Information"
+			        android:textColor="#fff" />
 		        
 		        <TextView
 			        android:id="@+id/smbranch"
@@ -64,6 +61,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/branchcode"
 			        android:text="Branch Code: "
@@ -73,6 +71,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/cinemaname"
 			        android:text="Cinema Name: "
@@ -82,6 +81,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/cinemacode"
 			        android:text="Movie Name"
@@ -91,6 +91,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/moviename"
 			        android:text="Movie Name: "
@@ -100,6 +101,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/moviecode"
 			        android:text="Movie Code: "
@@ -109,6 +111,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/ticketprice"
 			        android:text="Ticket Type Price: "
@@ -118,6 +121,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/conveniencecharge"
 			        android:text="Convenience Charge: "
@@ -127,6 +131,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/grosticketprice"
 			        android:text="Gross Ticket Price: "
@@ -136,6 +141,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/screeningdate"
 			        android:text="Screening Date: "
@@ -145,6 +151,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/starttime"
 			        android:text="Start Time: "
@@ -154,6 +161,7 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
+		        
 		        <TextView
 			        android:id="@+id/endtime"
 			        android:text="End time: "
@@ -173,14 +181,14 @@
 		        android:textColor="#fff"
 		        android:padding="7dp"
 		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_marginTop="15dp" />
+		        android:layout_height="wrap_content" />
 		    
 		    <LinearLayout
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:background="@drawable/transparentborder"
-		        android:orientation="vertical" >
+		        android:orientation="vertical" 
+		        android:layout_margin="10dp" >
 		        
 		        <TextView
 			        android:id="@+id/availableseats"
@@ -208,7 +216,8 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:background="@drawable/transparentborder"
-		        android:orientation="vertical" >	    	    
+		        android:orientation="vertical" 
+		        android:layout_margin="10dp" >	    	    
 		    
 		    <TextView
 		        android:id="@+id/payopt"
@@ -217,8 +226,7 @@
 		        android:textColor="#fff"
 		        android:padding="10dp"
 		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_marginTop="15dp" />
+		        android:layout_height="wrap_content" />
 		
 		    <RadioGroup
 		        android:layout_width="fill_parent"
@@ -230,6 +238,7 @@
 		            android:height="20dp"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="13dp"
 		            android:text="G-Cash"
 		            android:textSize="13dp"
 		            android:textColor="#fff" />
@@ -239,6 +248,7 @@
 		            android:height="20dp"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="13dp"
 		            android:text="VISA, MasterCard"
 		            android:textSize="13dp"
 		            android:textColor="#fff" />
@@ -248,6 +258,7 @@
 		            android:height="20dp"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="13dp"
 		            android:text="Smart Money"
 		            android:textSize="13dp"
 		            android:textColor="#fff" />
@@ -257,6 +268,7 @@
 		            android:height="20dp"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="13dp"
 		            android:text="eCard"
 		            android:textSize="13dp"
 		            android:textColor="#fff" />
@@ -268,7 +280,7 @@
 		        android:layout_width="wrap_content"
 		        android:layout_gravity="right"
 		        android:layout_height="wrap_content"
-		        android:layout_margin="15dp"
+		        android:layout_marginTop="10dp"
 		        android:gravity="center"
 		        android:text="Purchase >>" />
 		    

@@ -11,8 +11,6 @@ public class CinemaSignup extends Activity {
 
 	Intent i;
 	
-	Intent iii;
-	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
