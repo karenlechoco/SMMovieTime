@@ -14,8 +14,6 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
         	android:layout_height="wrap_content" >
-
-		   
     
 		    <TextView
 		        android:id="@+id/now_movietitle"
@@ -27,8 +25,6 @@
 		        android:background="@drawable/emboss"
 		        android:textColor="#fff"
 		        android:textSize="22sp" />
-
-		   
     
 		    <RelativeLayout
 		        android:layout_width="fill_parent"
@@ -40,48 +36,88 @@
 		        <ImageView
 			        android:id="@+id/now_poster"
 			        android:src="@drawable/ic_launcher"
-			        android:layout_below="@+id/border"
 			        android:layout_width="150dp"
-			        android:paddingLeft="5dp"
+			        android:layout_below="@+id/now_poster"
 			        android:contentDescription="@string/contentDescription"
 			        android:layout_height="wrap_content"
 			        android:layout_alignParentLeft="true"
-			        android:layout_marginRight="10dp" />
+			        android:layout_margin="10dp" />
         
 		        <LinearLayout android:layout_toRightOf="@+id/now_poster"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
-		            android:orientation="vertical">
+		            android:orientation="vertical" >
             
 		            <TextView
-			            android:id="@+id/now_starring"
+			            android:id="@+id/now_starring1"
+			            android:text="STARRING:"
+			            android:textStyle="italic"
 			            android:layout_width="fill_parent"
 			            android:layout_height="wrap_content"
-			            android:layout_margin="7dp"
-			            android:text="STARRING"
+			            android:layout_marginTop="10dp"
 			            android:textColor="#fff"
-			            android:textSize="15sp" />
+			            android:textSize="15dp" />
+		            
+		            <TextView
+			            android:id="@+id/now_starring"
+			            android:text=""
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="12dp"
+			            android:textColor="#fff"
+			            android:textSize="13dp" />
         
+		            <TextView
+			            android:id="@+id/now_genre1"
+			            android:text="GENRE:"
+			            android:textStyle="italic"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginTop="10dp"
+			            android:textColor="#fff"
+			            android:textSize="15dp" />
+		            
 			        <TextView
 			            android:id="@+id/now_genre"
+			            android:text=""
 			            android:layout_width="fill_parent"
 			            android:layout_height="wrap_content"
-			            android:padding="7dp"
-			            android:text="GENRE"
+			            android:layout_marginLeft="12dp"
 			            android:textColor="#fff"
-			            android:textSize="15sp" />
+			            android:textSize="13dp" />
 	        
         		</LinearLayout>
         		
-		        	<TextView
-				android:id="@+id/now_summary"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:layout_below="@+id/now_poster"
-			    android:text="SUMMARY"
-			    android:layout_margin="7dp"
-			    android:textColor="#fff"
-			    android:textSize="15sp" />
+		        <LinearLayout 
+		            android:layout_below="@+id/now_poster"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:orientation="vertical" >
+		        
+			        <TextView
+						android:id="@+id/now_summary1"
+					    android:text="SUMMARY:"
+					    android:textStyle="italic"
+					    android:layout_width="fill_parent"
+					    android:layout_height="wrap_content"
+					    android:layout_below="@+id/now_poster"
+					    android:paddingLeft="10dp"
+					    android:textColor="#fff"
+					    android:textSize="15dp" />
+			        
+			        <TextView
+						android:id="@+id/now_summary"
+					    android:text=""
+					    android:layout_width="fill_parent"
+					    android:layout_height="wrap_content"
+					    android:layout_below="@+id/now_poster"
+					    android:layout_marginLeft="20dp"
+					    android:layout_marginRight="10dp"
+					    android:paddingBottom="10dp"
+					    android:textColor="#fff"
+					    android:textSize="13dp" />
+		        
+		        </LinearLayout>
         
     		</RelativeLayout>
     
@@ -92,56 +128,57 @@
 		        android:padding="5dp"
 		        android:layout_margin="10dp" >
 		        	
-		     <LinearLayout
-		          android:orientation="vertical"
-            	  android:layout_width="fill_parent"
-        		  android:layout_height="wrap_content" >
+			    <LinearLayout
+			        android:orientation="vertical"
+	            	android:layout_width="fill_parent"
+	        		android:layout_height="wrap_content" >
     
-		    <TextView
-		        android:id="@+id/where"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:padding="5dp"
-		        android:paddingBottom="0dp"
-		        android:background="#000"
-		        android:textColor="#fff"
-		        android:text="@string/whereareyou"
-		        android:textStyle="bold"
-		        android:textSize="17sp" />
-    
+				    <TextView
+				        android:id="@+id/where"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:padding="5dp"
+				        android:paddingBottom="0dp"
+				        android:background="#000"
+				        android:textColor="#fff"
+				        android:text="@string/whereareyou"
+				        android:textStyle="bold"
+				        android:textSize="17sp" />
 		    
-    
-		    <TextView
-		        android:id="@+id/metro_manila"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:padding="10dp"
-		        android:paddingTop="0dp"
-		        android:textColor="#fff"
-		        android:text="@string/metromanila"
-		        android:textSize="15sp" />
-    
-		    <TextView
-		        android:id="@+id/luzon"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:padding="10dp"
-		        android:paddingTop="0dp"
-		        android:textColor="#fff"
-		        android:text="@string/luzon"
-		        android:textSize="15sp" />
-    
-		    <TextView
-		        android:id="@+id/vismin"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:padding="10dp"
-		        android:paddingTop="0dp"
-		        android:textColor="#fff"
-		        android:text="@string/vismin"
-		        android:textSize="15sp" />
+				    <TextView
+				        android:id="@+id/metro_manila"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				        android:padding="10dp"
+				        android:paddingTop="0dp"
+				        android:textColor="#fff"
+				        android:text="@string/metromanila"
+				        android:textSize="15sp" />
 		    
-		    </LinearLayout>
+				    <TextView
+				        android:id="@+id/luzon"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				        android:padding="10dp"
+				        android:paddingTop="0dp"
+				        android:textColor="#fff"
+				        android:text="@string/luzon"
+				        android:textSize="15sp" />
+		    
+				    <TextView
+				        android:id="@+id/vismin"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				        android:padding="10dp"
+				        android:paddingTop="0dp"
+				        android:textColor="#fff"
+				        android:text="@string/vismin"
+				        android:textSize="15sp" />
+			    
+			    </LinearLayout>
 		    
 		    </RelativeLayout>
     

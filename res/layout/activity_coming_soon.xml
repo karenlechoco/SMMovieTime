@@ -3,9 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/global_bg_portrait"
-    android:id="@+id/now_showing_layout" >
-    
-   
+    android:id="@+id/now_showing_layout" > 
 
     <Gallery
         android:id="@+id/movie_catalogue"
@@ -21,6 +19,7 @@
 	        android:layout_gravity="center_vertical"
 	        android:layout_alignParentBottom="true"
 	        android:layout_centerHorizontal="true"
+	        android:background="#191970"
 	        android:gravity="center"
 	        android:padding="7dp"     
 	        android:layout_marginBottom="7dp" 
