@@ -8,7 +8,7 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:scrollbarAlwaysDrawVerticalTrack="false" >
+        android:scrollbars="none">
         
         <LinearLayout
             android:orientation="vertical"
@@ -18,13 +18,16 @@
 		    <TextView
 		        android:id="@+id/movietitle"
 		        android:layout_width="fill_parent"
-		        android:layout_height="35dp"
-		        android:padding="5dp"
+		        android:layout_height="40dp"
+		        android:layout_gravity="center"
+		        android:paddingLeft="10dp"
+		        android:paddingTop="5dp"
+		        android:paddingBottom="5dp"
 		        android:textStyle="bold"
 		        android:text="Movie"
 		        android:background="@drawable/emboss"
 		        android:textColor="#fff"
-		        android:textSize="22dp" />
+		        android:textSize="20dp" />
     
 		    <RelativeLayout
 		        android:layout_width="fill_parent"

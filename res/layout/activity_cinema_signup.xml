@@ -225,19 +225,19 @@
 		        	android:layout_width="fill_parent"
 		        	android:layout_height="wrap_content" />
 		        <EditText
-		            android:id="@+id/editText2"
+		            android:id="@+id/editText12"
 		            android:layout_width="match_parent"
 		            android:layout_height="wrap_content"
 		            android:inputType="textPassword" />
 		        
 		        <TextView
-		        	android:text="Retype Password *"
+		        	android:text="Confirm Password *"
 		        	android:textColor="#fff"
 		        	android:textSize="13dp"
 		        	android:layout_width="fill_parent"
 		        	android:layout_height="wrap_content" />
 		        <EditText
-		            android:id="@+id/editText2"
+		            android:id="@+id/editText13"
 		            android:layout_width="match_parent"
 		            android:layout_height="wrap_content"
 		            android:inputType="textPassword" />

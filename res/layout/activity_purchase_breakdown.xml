@@ -18,13 +18,16 @@
 		    <TextView
 		        android:id="@+id/movietitle"
 		        android:layout_width="fill_parent"
-		        android:layout_height="35dp"
+		        android:layout_height="40dp"
 		        android:background="@drawable/emboss"
-		        android:padding="5dp"
+		        android:layout_gravity="center"
+		        android:paddingLeft="10dp"
+		        android:paddingTop="5dp"
+		        android:paddingBottom="5dp"
 		        android:textStyle="bold"
 		        android:text="@string/movietitle"
 		        android:textColor="#fff"
-		        android:textSize="15dp" />
+		        android:textSize="20sp" />
 				    
 		    <TextView
 		        android:id="@+id/location_crumbs"
@@ -57,7 +60,7 @@
 			        android:text="SM Branch: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -67,7 +70,7 @@
 			        android:text="Branch Code: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -77,7 +80,7 @@
 			        android:text="Cinema Name: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -87,7 +90,7 @@
 			        android:text="Movie Name"
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -97,7 +100,7 @@
 			        android:text="Movie Name: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -107,7 +110,7 @@
 			        android:text="Movie Code: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -117,7 +120,7 @@
 			        android:text="Ticket Type Price: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -127,7 +130,7 @@
 			        android:text="Convenience Charge: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -137,7 +140,7 @@
 			        android:text="Gross Ticket Price: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -147,7 +150,7 @@
 			        android:text="Screening Date: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -157,7 +160,7 @@
 			        android:text="Start Time: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -167,7 +170,7 @@
 			        android:text="End time: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -177,7 +180,7 @@
 		    <TextView
 		        android:id="@+id/resseat"
 		        android:text="@string/reserve_seats"
-		        android:background="#191970"
+		        android:background="#a5191970"
 		        android:textColor="#fff"
 		        android:padding="7dp"
 		        android:layout_width="fill_parent"
@@ -195,7 +198,7 @@
 			        android:text="Available Seats: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -205,7 +208,7 @@
 			        android:text="Seats Selected: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
-			        android:textSize="13dp"
+			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
@@ -216,73 +219,75 @@
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:background="@drawable/transparentborder"
-		        android:orientation="vertical" 
-		        android:layout_margin="10dp" >	    	    
+		        android:orientation="vertical"
+		        android:layout_marginLeft="10dp" 
+		        android:layout_marginRight="10dp"
+		        android:layout_marginBottom="10dp" >	    	    
 		    
-		    <TextView
-		        android:id="@+id/payopt"
-		        android:text="@string/payment_options"
-		        android:background="#000"
-		        android:textColor="#fff"
-		        android:padding="10dp"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content" />
-		
-		    <RadioGroup
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:background="#a5000000" >
-		
-		        <RadioButton
-		            android:width="20dp"
-		            android:height="20dp"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="13dp"
-		            android:text="G-Cash"
-		            android:textSize="13dp"
-		            android:textColor="#fff" />
-		        
-		        <RadioButton
-		            android:width="20dp"
-		            android:height="20dp"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="13dp"
-		            android:text="VISA, MasterCard"
-		            android:textSize="13dp"
-		            android:textColor="#fff" />
-		        
-		        <RadioButton
-		            android:width="20dp"
-		            android:height="20dp"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="13dp"
-		            android:text="Smart Money"
-		            android:textSize="13dp"
-		            android:textColor="#fff" />
-		        
-		        <RadioButton
-		            android:width="20dp"
-		            android:height="20dp"
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="13dp"
-		            android:text="eCard"
-		            android:textSize="13dp"
-		            android:textColor="#fff" />
-		        
-		    </RadioGroup>
-		
-		    <Button
-		        android:id="@+id/next"
-		        android:layout_width="wrap_content"
-		        android:layout_gravity="right"
-		        android:layout_height="wrap_content"
-		        android:layout_marginTop="10dp"
-		        android:gravity="center"
-		        android:text="Purchase >>" />
+			    <TextView
+			        android:id="@+id/payopt"
+			        android:text="@string/payment_options"
+			        android:background="#000"
+			        android:textColor="#fff"
+			        android:padding="10dp"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content" />
+			
+			    <RadioGroup
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:background="#a5000000" >
+			
+			        <RadioButton
+			            android:width="20dp"
+			            android:height="20dp"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="13dp"
+			            android:text="G-Cash"
+			            android:textSize="13sp"
+			            android:textColor="#fff" />
+			        
+			        <RadioButton
+			            android:width="20dp"
+			            android:height="20dp"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="13dp"
+			            android:text="VISA, MasterCard"
+			            android:textSize="13sp"
+			            android:textColor="#fff" />
+			        
+			        <RadioButton
+			            android:width="20dp"
+			            android:height="20dp"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="13dp"
+			            android:text="Smart Money"
+			            android:textSize="13sp"
+			            android:textColor="#fff" />
+			        
+			        <RadioButton
+			            android:width="20dp"
+			            android:height="20dp"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="13dp"
+			            android:text="eCard"
+			            android:textSize="13sp"
+			            android:textColor="#fff" />
+			        
+			    </RadioGroup>
+			
+			    <Button
+			        android:id="@+id/next"
+			        android:layout_width="wrap_content"
+			        android:layout_gravity="right"
+			        android:layout_height="wrap_content"
+			        android:layout_marginTop="10dp"
+			        android:gravity="center"
+			        android:text="Purchase >>" />
 		    
 		    </LinearLayout>
 		    

@@ -19,12 +19,15 @@
 		        android:id="@+id/now_movietitle"
 		        android:layout_width="fill_parent"
 		        android:text="Movie"
-		        android:layout_height="35dp"
-		        android:padding="5dp"
+		        android:layout_height="40dp"
+		        android:layout_gravity="center"
+		        android:paddingLeft="10dp"
+		        android:paddingTop="5dp"
+		        android:paddingBottom="5dp"
 		        android:textStyle="bold"
 		        android:background="@drawable/emboss"
 		        android:textColor="#fff"
-		        android:textSize="22sp" />
+		        android:textSize="20sp" />
     
 		    <RelativeLayout
 		        android:layout_width="fill_parent"
@@ -126,7 +129,9 @@
 		        android:layout_height="fill_parent"
 		        android:background="@drawable/transparentborder"
 		        android:padding="5dp"
-		        android:layout_margin="10dp" >
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="10dp"
+		        android:layout_marginBottom="10dp" >
 		        	
 			    <LinearLayout
 			        android:orientation="vertical"
