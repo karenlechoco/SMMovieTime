@@ -54,27 +54,7 @@
 			        android:padding="5dp"
 			        android:text="General Information"
 			        android:textColor="#fff" />
-		        
-		        <TextView
-			        android:id="@+id/smbranch"
-			        android:text="SM Branch: "
-			        android:padding="2dp"
-			        android:layout_marginLeft="13dp"
-			        android:textSize="13sp"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:textColor="#fff"/>
-		        
-		        <TextView
-			        android:id="@+id/branchcode"
-			        android:text="Branch Code: "
-			        android:padding="2dp"
-			        android:layout_marginLeft="13dp"
-			        android:textSize="13sp"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:textColor="#fff"/>
-		        
+		        		        
 		        <TextView
 			        android:id="@+id/cinemaname"
 			        android:text="Cinema Name: "
@@ -86,17 +66,17 @@
 			        android:textColor="#fff"/>
 		        
 		        <TextView
-			        android:id="@+id/cinemacode"
-			        android:text="Movie Name"
+			        android:id="@+id/cinematype"
+			        android:text="Cinema Type: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
 			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
-		        
+		        		        
 		        <TextView
-			        android:id="@+id/moviename"
+			        android:id="@+id/movieName"
 			        android:text="Movie Name: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
@@ -104,47 +84,17 @@
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
-		        
-		        <TextView
-			        android:id="@+id/moviecode"
-			        android:text="Movie Code: "
-			        android:padding="2dp"
-			        android:layout_marginLeft="13dp"
-			        android:textSize="13sp"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:textColor="#fff"/>
-		        
+		        		        
 		        <TextView
 			        android:id="@+id/ticketprice"
-			        android:text="Ticket Type Price: "
+			        android:text="Ticket Price: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
 			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
-		        
-		        <TextView
-			        android:id="@+id/conveniencecharge"
-			        android:text="Convenience Charge: "
-			        android:padding="2dp"
-			        android:layout_marginLeft="13dp"
-			        android:textSize="13sp"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:textColor="#fff"/>
-		        
-		        <TextView
-			        android:id="@+id/grosticketprice"
-			        android:text="Gross Ticket Price: "
-			        android:padding="2dp"
-			        android:layout_marginLeft="13dp"
-			        android:textSize="13sp"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:textColor="#fff"/>
-		        
+		        		        
 		        <TextView
 			        android:id="@+id/screeningdate"
 			        android:text="Screening Date: "
@@ -157,24 +107,14 @@
 		        
 		        <TextView
 			        android:id="@+id/starttime"
-			        android:text="Start Time: "
+			        android:text="Screening Time: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
 			        android:textSize="13sp"
 			        android:layout_width="fill_parent"
 			        android:layout_height="wrap_content"
 			        android:textColor="#fff"/>
-		        
-		        <TextView
-			        android:id="@+id/endtime"
-			        android:text="End time: "
-			        android:padding="2dp"
-			        android:layout_marginLeft="13dp"
-			        android:textSize="13sp"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:textColor="#fff"/>
-		        
+		        		        
 		    </LinearLayout>
 		    
 		    <TextView
@@ -279,8 +219,9 @@
 			            android:textColor="#fff" />
 			        
 			    </RadioGroup>
-			
-			    <Button
+					    
+		    </LinearLayout>
+		    <Button
 			        android:id="@+id/next"
 			        android:layout_width="wrap_content"
 			        android:layout_gravity="right"
@@ -288,9 +229,6 @@
 			        android:layout_marginTop="10dp"
 			        android:gravity="center"
 			        android:text="Purchase >>" />
-		    
-		    </LinearLayout>
-		    
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -118,7 +118,7 @@ public class Launcher extends Activity {
 			@Override
 			protected void onPostExecute(String result) {
 				super.onPostExecute(result);
-				bar.incrementProgressBy(8);
+				bar.incrementProgressBy(3);
 				if (bar.getProgress() >= 10) {
 					Intent i = new Intent(getBaseContext(), TabMenu.class);
 					startActivity(i);
@@ -225,7 +225,7 @@ public class Launcher extends Activity {
 			@Override
 			protected void onPostExecute(String result) {
 				super.onPostExecute(result);
-				bar.incrementProgressBy(4);
+				bar.incrementProgressBy(5);
 				if (bar.getProgress() >= 10) {
 					Intent i = new Intent(getBaseContext(), TabMenu.class);
 					startActivity(i);
