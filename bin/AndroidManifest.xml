@@ -17,6 +17,7 @@
 
         <!-- LAUNCHER -->
         <activity
+            android:noHistory="true"
             android:name="com.sm.movietime.Launcher"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -114,6 +115,7 @@
 
         <!-- CINEMA LOGIN -->
         <activity
+            android:noHistory="true"
             android:name="com.sm.movietime.CinemaLogin"
             android:label="@string/title_activity_cinema_login"
             android:screenOrientation="portrait"
@@ -125,6 +127,7 @@
 
         <!-- SIGNUP -->
         <activity
+            android:noHistory="true"
             android:name="com.sm.movietime.CinemaSignup"
             android:label="@string/title_activity_cinema_signup"
             android:screenOrientation="portrait"

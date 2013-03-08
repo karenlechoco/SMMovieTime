@@ -51,6 +51,7 @@ public class CinemaLogin extends Activity {
 					i = getIntent();
 					i.setClass(getBaseContext(), PurchaseBreakdown.class);
 					startActivity(i);
+					finish();
 				} else Toast.makeText(getBaseContext(), "Invalid Login", Toast.LENGTH_LONG).show();
 			}
 		});

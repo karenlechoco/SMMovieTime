@@ -5,10 +5,11 @@ public class Schedule {
 	String generalLocation;
 	String specificLocation;
 	String cinemaName;
-	String movieCode;
+	String cinemaType;
+	String movieName;
 	String date;
 	String time;
-	Float ticketPrice;
+	Double ticketPrice;
 	Integer vacantSeats;
 	
 	public String getGeneralLocation() {
@@ -34,15 +35,23 @@ public class Schedule {
 	public void setCinemaName(String cinemaName) {
 		this.cinemaName = cinemaName;
 	}
-	
-	public String getMovieCode() {
-		return movieCode;
+		
+	public String getCinemaType() {
+		return cinemaType;
 	}
-	
-	public void setMovieCode(String movieCode) {
-		this.movieCode = movieCode;
+
+	public void setCinemaType(String cinemaType) {
+		this.cinemaType = cinemaType;
 	}
-	
+
+	public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
+
 	public String getDate() {
 		return date;
 	}
@@ -59,12 +68,12 @@ public class Schedule {
 		this.time = time;
 	}
 	
-	public Float getTicketPrice() {
+	public Double getTicketPrice() {
 		return ticketPrice;
 	}
 	
-	public void setTicketPrice(Float ticketPrice) {
-		this.ticketPrice = ticketPrice;
+	public void setTicketPrice(double d) {
+		this.ticketPrice = d;
 	}
 	
 	public Integer getVacantSeats() {

@@ -24,15 +24,19 @@ public class DB_Initializer extends SQLiteOpenHelper {
 	private static final String KEY_EMAIL = "email";
 	private static final String KEY_PASSWORD = "password";
 	
-	private static final String TABLE_CINEMA = "schedule";
+	private static final String TABLE_SCHEDULE = "schedule";
 	private static final String KEY_GENLOC = "general_location";
 	private static final String KEY_SPECLOC = "specific_location";
-	private static final String KEY_CINEMA = "cinema_name";
-	private static final String KEY_SCHED_MOVIE_CODE = "movie_code";
+	private static final String KEY_CINEMA_NAME = "cinema_name";
+	private static final String KEY_CINEMA_TYPE = "cinema_type";
+	private static final String KEY_MOVIE_NAME = "movie_name";
 	private static final String KEY_DATE = "date";
 	private static final String KEY_TIME = "time";
 	private static final String KEY_TICKET_PRICE = "ticket_price";
 	private static final String KEY_VACANT_SEATS = "vacant_seats";
+	
+	private static final String TABLE_PREFS = "preferences";
+	private static final String KEY_LOGGEDIN = "logged_username";
 	
 	SQLiteDatabase database;
 	
@@ -43,7 +47,6 @@ public class DB_Initializer extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		
 		String CREATE_TABLE_MOVIE = "CREATE TABLE " + TABLE_MOVIE + "("
 				+ KEY_MOVIE_CODE + " TEXT PRIMARY KEY,"
 				+ KEY_MOVIE_TITLE + " TEXT,"
@@ -63,17 +66,24 @@ public class DB_Initializer extends SQLiteOpenHelper {
 		db.execSQL(CREATE_USER_TABLE);
 		Log.d("Database", CREATE_USER_TABLE);
 		
-		String CREATE_CINEMA_TABLE = "CREATE TABLE " + TABLE_CINEMA + "("
+		String CREATE_CINEMA_TABLE = "CREATE TABLE " + TABLE_SCHEDULE + "("
 				+ KEY_GENLOC + " TEXT,"
 				+ KEY_SPECLOC + " TEXT,"
-				+ KEY_CINEMA + " TEXT,"
-				+ KEY_SCHED_MOVIE_CODE + " TEXT,"
+				+ KEY_CINEMA_NAME + " TEXT,"
+				+ KEY_MOVIE_NAME + " TEXT,"
 				+ KEY_DATE + " TEXT,"
 				+ KEY_TIME + " TEXT,"
-				+ KEY_TICKET_PRICE + " TEXT,"
-				+ KEY_VACANT_SEATS + " TEXT"
+				+ KEY_TICKET_PRICE + " DOUBLE,"
+				+ KEY_CINEMA_TYPE + " TEXT,"
+				+ KEY_VACANT_SEATS + " INTEGER"
 				+ ")";
 		db.execSQL(CREATE_CINEMA_TABLE);
+		Log.d("Database", CREATE_CINEMA_TABLE);
+		
+		String CREATE_PREFS_TABLE = "CREATE TABLE " + TABLE_PREFS + "(" 
+				+ KEY_LOGGEDIN + " TEXT"
+				+ ")";
+		db.execSQL(CREATE_PREFS_TABLE);
 		Log.d("Database", CREATE_CINEMA_TABLE);
 	}
 
@@ -81,8 +91,8 @@ public class DB_Initializer extends SQLiteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_MOVIE);
 		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_USER);
-		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_CINEMA);
+		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_SCHEDULE);
+		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_PREFS);
 		onCreate(db);
 	}
-
 }

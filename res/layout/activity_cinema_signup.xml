@@ -6,7 +6,8 @@
     
     <ScrollView
         android:layout_height="wrap_content"
-        android:layout_width="match_parent" >
+        android:layout_width="match_parent"
+        android:scrollbars="none" >
     	
     	<RelativeLayout
         	android:layout_height="fill_parent"
@@ -240,18 +241,7 @@
 		            android:layout_width="match_parent"
 		            android:layout_height="wrap_content"
 		            android:inputType="textPassword" />
-		    	
-		        <TextView
-		        	android:text="Branch"
-		        	android:textColor="#fff"
-		        	android:textSize="13dp"
-		        	android:layout_width="fill_parent"
-		        	android:layout_height="wrap_content" />
-		        <Spinner
-		            android:layout_width="fill_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_marginBottom="8dp" />
-		       	            
+		    			       	            
 		        <Button
 		            android:id="@+id/signup_submit"
 		            android:layout_height="wrap_content"

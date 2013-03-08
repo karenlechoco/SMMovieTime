@@ -38,7 +38,7 @@ public class TabMenu extends TabActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_now_showing, menu);
+        getMenuInflater().inflate(R.menu.activity_tabmenu, menu);
         return true;
     }
 }
