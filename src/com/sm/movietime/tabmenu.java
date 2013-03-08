@@ -21,15 +21,15 @@ public class TabMenu extends TabActivity {
         Intent intent;
         
         intent = new Intent().setClass(this, NowShowing.class);
-        spec = host.newTabSpec("now showing").setIndicator("Now Showing", res.getDrawable(R.drawable.now)).setContent(intent);
+        spec = host.newTabSpec("now showing").setIndicator("Now Showing").setContent(intent);
         host.addTab(spec);
         
         intent = new Intent().setClass(this, NextAttraction.class);
-        spec = host.newTabSpec("next attraction").setIndicator("Next Attraction", res.getDrawable(R.drawable.next)).setContent(intent);
+        spec = host.newTabSpec("next attraction").setIndicator("Next Attraction").setContent(intent);
         host.addTab(spec);
         
         intent = new Intent().setClass(this, ComingSoon.class);
-        spec = host.newTabSpec("coming soon").setIndicator("Coming Soon", res.getDrawable(R.drawable.soon)).setContent(intent);
+        spec = host.newTabSpec("coming soon").setIndicator("Coming Soon").setContent(intent);
         host.addTab(spec);
         
         host.setCurrentTab(3);
