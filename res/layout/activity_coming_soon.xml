@@ -19,7 +19,7 @@
 	        android:layout_gravity="center_vertical"
 	        android:layout_alignParentBottom="true"
 	        android:layout_centerHorizontal="true"
-	        android:background="#191970"
+	        android:background="#a5191970"
 	        android:gravity="center"
 	        android:padding="7dp"     
 	        android:layout_marginBottom="7dp" 

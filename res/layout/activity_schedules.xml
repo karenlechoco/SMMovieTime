@@ -18,13 +18,16 @@
 		    <TextView
 		        android:id="@+id/movietitle"
 		        android:layout_width="fill_parent"
-		        android:layout_height="35dp"
-		        android:padding="5dp"
+		        android:text="Movie"
+		        android:layout_height="40dp"
+		        android:layout_gravity="center"
+		        android:paddingLeft="10dp"
+		        android:paddingTop="5dp"
+		        android:paddingBottom="5dp"
 		        android:textStyle="bold"
 		        android:background="@drawable/emboss"
-		        android:text="Movie"
 		        android:textColor="#fff"
-		        android:textSize="15dp" />
+		        android:textSize="20sp" />
 		 
 		    <TextView
 		        android:id="@+id/location_crumbs"
