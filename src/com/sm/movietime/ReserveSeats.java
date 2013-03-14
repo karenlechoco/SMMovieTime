@@ -5,11 +5,19 @@ package com.sm.movietime;
 //import com.sai.samples.views.R;
 //import com.sai.samples.views.GalleryView.ImageAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sm.database.DBHelper_PrefsTable;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -20,11 +28,14 @@ import android.widget.TextView;
 public class ReserveSeats extends Activity {
 	
 	Intent intnt;
+	List<String> booked_seats;
 		
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve_seats);
+        
+        booked_seats = new ArrayList<String>();
         
         final Button cancel = (Button)findViewById(R.id.cancel_res_button);
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -48,11 +59,45 @@ public class ReserveSeats extends Activity {
         
         TableLayout tl = CreateSeatsLayout();
         
+        tl.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+        
         ScrollView sc = (ScrollView)findViewById(R.id.reserve_scroll);
         sc.addView(tl);
                 
     }
-
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+		DBHelper_PrefsTable tbl = new DBHelper_PrefsTable(getBaseContext());
+		if (tbl.isLoggedIn())
+			getMenuInflater().inflate(R.menu.global_logout_menu, menu);
+		else getMenuInflater().inflate(R.menu.global_login_menu, menu);
+        return true;
+    }
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+		switch (item.getItemId()) {
+            case R.id.logout:
+                DBHelper_PrefsTable tbl = new DBHelper_PrefsTable(getBaseContext());
+                tbl.deletePref();
+                i = new Intent(getBaseContext(),TabMenu.class);
+                startActivity(i);
+                return true;
+            case R.id.login:
+                i = new Intent(getBaseContext(),CinemaLogin.class);
+                startActivity(i);
+                //return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     
     	public TableLayout CreateSeatsLayout() {
 			      		

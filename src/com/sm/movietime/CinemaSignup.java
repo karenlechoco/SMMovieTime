@@ -3,6 +3,9 @@ package com.sm.movietime;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.sm.database.DBHelper_UserAccountTable;
+import com.sm.database.UserAccount;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -28,6 +31,8 @@ public class CinemaSignup extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				DBHelper_UserAccountTable uh = new DBHelper_UserAccountTable(getBaseContext());
+				UserAccount u = new UserAccount();
 				EditText firstname = (EditText) findViewById(R.id.editText1);
 		        String strFirstname = firstname.getText().toString();
 		        EditText lastname = (EditText) findViewById(R.id.editText2);
@@ -37,6 +42,7 @@ public class CinemaSignup extends Activity {
 		        EditText city = (EditText) findViewById(R.id.editText5);
 		        String strCity = city.getText().toString();
 		        /*birthdate*/
+		        EditText bdate = (EditText)findViewById(R.id.editText6);
 		        EditText email1 = (EditText) findViewById(R.id.editText10);
 		        String strEmail1 = email1.getText().toString();
 		        EditText email2 = (EditText) findViewById(R.id.editText11);
@@ -64,9 +70,16 @@ public class CinemaSignup extends Activity {
 		        }
 		        	
 		        if(flag == 0) {
+		        	u.setEmail(strEmail1);
+		        	u.setPassword(strPassword1);
+		        	uh.addAccount(u);
 		        	i = getIntent();
-					i.setClass(getBaseContext(), PurchaseBreakdown.class);
+					i.setClass(getBaseContext(), CinemaLogin.class);
+					Bundle e = i.getExtras();
+					i.putExtra("MovieTitle", e.getString("MovieTitle"));
+					i.putExtra("time", e.getString("time"));
 					startActivity(i);
+					finish();
 		        }
 		        else {
 		        	Toast.makeText(getBaseContext(), strNotif, Toast.LENGTH_LONG).show();

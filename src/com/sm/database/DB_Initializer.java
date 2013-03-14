@@ -23,6 +23,15 @@ public class DB_Initializer extends SQLiteOpenHelper {
 	private static final String TABLE_USER = "useraccount";
 	private static final String KEY_EMAIL = "email";
 	private static final String KEY_PASSWORD = "password";
+	private static final String KEY_FNAME = "firstname";
+	private static final String KEY_MNAME = "middlename";
+	private static final String KEY_LNAME = "lastname";
+	private static final String KEY_CITY = "city";
+	private static final String KEY_ADDRESS = "adress";
+	private static final String KEY_BIRTHDATE = "birthdate";
+	private static final String KEY_COMPANY = "company";
+	private static final String KEY_MOBILE = "mobile";
+	private static final String KEY_PHONE = "phone";
 	
 	private static final String TABLE_SCHEDULE = "schedule";
 	private static final String KEY_GENLOC = "general_location";
@@ -61,7 +70,16 @@ public class DB_Initializer extends SQLiteOpenHelper {
 		
 		String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "(" 
 				+ KEY_EMAIL + " TEXT PRIMARY KEY,"
-				+ KEY_PASSWORD + " TEXT"
+				+ KEY_PASSWORD + " TEXT,"
+				+ KEY_FNAME + " TEXT," 
+				+ KEY_MNAME + " TEXT,"
+				+ KEY_LNAME + " TEXT,"
+				+ KEY_ADDRESS + " TEXT,"
+				+ KEY_CITY + " TEXT,"
+				+ KEY_BIRTHDATE + " TEXT,"
+				+ KEY_COMPANY + " TEXT,"
+				+ KEY_MOBILE + " TEXT,"
+				+ KEY_PHONE + " TEXT"
 				+ ")";
 		db.execSQL(CREATE_USER_TABLE);
 		Log.d("Database", CREATE_USER_TABLE);
@@ -94,5 +112,12 @@ public class DB_Initializer extends SQLiteOpenHelper {
 		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_SCHEDULE);
 		db.execSQL("DELETE TABLE IF EXISTS " + TABLE_PREFS);
 		onCreate(db);
+	}
+	
+	public void Truncate() {
+		SQLiteDatabase db = getWritableDatabase();
+		db.delete(TABLE_MOVIE, null, null);
+		db.delete(TABLE_SCHEDULE, null, null);
+		db.delete(TABLE_USER, null, null);
 	}
 }
