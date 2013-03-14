@@ -5,6 +5,7 @@ import com.sm.database.Schedule;
 import com.sm.database.UserAccount;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,6 +29,11 @@ public class CinemaLogin extends Activity {
         pass = (EditText)findViewById(R.id.password);
         
         tbl = new DBHelper_UserAccountTable(getBaseContext());
+        String calling_activity = "";
+        Bundle ex = getIntent().getExtras();
+        if (ex!=null) {
+        	calling_activity = ex.getString("callingActivity");
+        }
                     
         final Button reg = (Button)findViewById(R.id.register_button);
         reg.setOnClickListener(new View.OnClickListener() {
@@ -51,9 +57,14 @@ public class CinemaLogin extends Activity {
 				if (tbl.verifyLogin(u, getBaseContext())) {
 					i = getIntent();
 					Bundle e = i.getExtras();
-					i.putExtra("MovieTitle", e.getString("MovieTitle"));
-					i.putExtra("time", e.getString("time"));
-					i.setClass(getBaseContext(), PurchaseBreakdown.class);
+					if (e!=null) {
+						i.putExtra("MovieTitle", e.getString("MovieTitle"));
+						i.putExtra("time", e.getString("time"));
+						if (e.getString("callingActivity").equals("Schedules"))
+							i.setClass(getBaseContext(), PurchaseBreakdown.class);
+					}
+					else
+						i.setClass(getBaseContext(), TabMenu.class);
 					startActivity(i);
 					finish();
 				} else Toast.makeText(getBaseContext(), "Invalid Login", Toast.LENGTH_LONG).show();

@@ -23,19 +23,7 @@ public class Schedules extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedules);
-        
-        //Put a while here for db access
-        
-        LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View v = (View)inflater.inflate(R.layout.cinema_container, null);
-        TextView cinema_name = (TextView)v.findViewById(R.id.cinema_name);
-        TextView ticket_price = (TextView)v.findViewById(R.id.ticket_price);
-        TextView date = (TextView)v.findViewById(R.id.date1);
-        TextView time = (TextView)v.findViewById(R.id.time1);
-        LinearLayout cinema_list = (LinearLayout)v.findViewById(R.id.cinema_list);
-        LinearLayout date_list = (LinearLayout)v.findViewById(R.id.date_list);
-        LinearLayout time_list = (LinearLayout)v.findViewById(R.id.time_list);
-        
+                
         i = getIntent(); //intent from SpecificLocation
         ex = i.getExtras();
         if (ex != null) {
@@ -47,65 +35,65 @@ public class Schedules extends Activity {
         final TextView title = (TextView)findViewById(R.id.movietitle);
         title.setText(movietitle);
         
-//        final TextView time = (TextView)findViewById(R.id.time1);
-//        time.setOnClickListener(new View.OnClickListener() {
-//        	
-//			@Override
-//			public void onClick(View v) {
-//				DBHelper_PrefsTable pt = new DBHelper_PrefsTable(getBaseContext());
-//				if (!pt.isLoggedIn()) {
-//					i.setClass(getBaseContext(), CinemaLogin.class);
-//					i.putExtra("MovieTitle", movietitle);
-//					i.putExtra("time", time.getText());
-//					startActivity(i);
-//				} else {
-//					i.setClass(getBaseContext(), PurchaseBreakdown.class);
-//					i.putExtra("MovieTitle", movietitle);
-//					i.putExtra("time", time.getText());
-//					startActivity(i);
-//				}
-//			}
-//		});
-//        
-//        final TextView time2 = (TextView)findViewById(R.id.time2);
-//        time2.setOnClickListener(new View.OnClickListener() {
-//        	
-//			@Override
-//			public void onClick(View v) {
-//				DBHelper_PrefsTable pt = new DBHelper_PrefsTable(getBaseContext());
-//				if (!pt.isLoggedIn()) {
-//					i.setClass(getBaseContext(), CinemaLogin.class);
-//					i.putExtra("MovieTitle", movietitle);
-//					i.putExtra("time", time2.getText());
-//					startActivity(i);
-//				} else {
-//					i.setClass(getBaseContext(), PurchaseBreakdown.class);
-//					i.putExtra("MovieTitle", movietitle);
-//					i.putExtra("time", time2.getText());
-//					startActivity(i);
-//				}
-//			}
-//		});
-//        
-//        final TextView time3 = (TextView)findViewById(R.id.time3);
-//        time3.setOnClickListener(new View.OnClickListener() {
-//        	
-//			@Override
-//			public void onClick(View v) {
-//				DBHelper_PrefsTable pt = new DBHelper_PrefsTable(getBaseContext());
-//				if (!pt.isLoggedIn()) {
-//					i.setClass(getBaseContext(), CinemaLogin.class);
-//					i.putExtra("MovieTitle", movietitle);
-//					i.putExtra("time", time3.getText());
-//					startActivity(i);
-//				} else {
-//					i.setClass(getBaseContext(), PurchaseBreakdown.class);
-//					i.putExtra("MovieTitle", movietitle);
-//					i.putExtra("time", time3.getText());
-//					startActivity(i);
-//				}
-//			}
-//		});
+        final TextView time = (TextView)findViewById(R.id.time1);
+        time.setOnClickListener(new View.OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				DBHelper_PrefsTable pt = new DBHelper_PrefsTable(getBaseContext());
+				if (!pt.isLoggedIn()) {
+					i.setClass(getBaseContext(), CinemaLogin.class);
+					i.putExtra("MovieTitle", movietitle);
+					i.putExtra("time", time.getText());
+					startActivity(i);
+				} else {
+					i.setClass(getBaseContext(), PurchaseBreakdown.class);
+					i.putExtra("MovieTitle", movietitle);
+					i.putExtra("time", time.getText());
+					startActivity(i);
+				}
+			}
+		});
+        
+        final TextView time2 = (TextView)findViewById(R.id.time2);
+        time2.setOnClickListener(new View.OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				DBHelper_PrefsTable pt = new DBHelper_PrefsTable(getBaseContext());
+				if (!pt.isLoggedIn()) {
+					i.setClass(getBaseContext(), CinemaLogin.class);
+					i.putExtra("MovieTitle", movietitle);
+					i.putExtra("time", time2.getText());
+					startActivity(i);
+				} else {
+					i.setClass(getBaseContext(), PurchaseBreakdown.class);
+					i.putExtra("MovieTitle", movietitle);
+					i.putExtra("time", time2.getText());
+					startActivity(i);
+				}
+			}
+		});
+        
+        final TextView time3 = (TextView)findViewById(R.id.time3);
+        time3.setOnClickListener(new View.OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				DBHelper_PrefsTable pt = new DBHelper_PrefsTable(getBaseContext());
+				if (!pt.isLoggedIn()) {
+					i.setClass(getBaseContext(), CinemaLogin.class);
+					i.putExtra("MovieTitle", movietitle);
+					i.putExtra("time", time3.getText());
+					startActivity(i);
+				} else {
+					i.setClass(getBaseContext(), PurchaseBreakdown.class);
+					i.putExtra("MovieTitle", movietitle);
+					i.putExtra("time", time3.getText());
+					startActivity(i);
+				}
+			}
+		});
     }
     
     @Override
@@ -129,6 +117,7 @@ public class Schedules extends Activity {
                 return true;
             case R.id.login:
                 i = new Intent(getBaseContext(),CinemaLogin.class);
+                i.putExtra("callingActivity", "Schedules");
                 startActivity(i);
                 //return true;
         }

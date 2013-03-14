@@ -1,9 +1,6 @@
 package com.sm.movietime;
 
-import java.util.List;
-
 import com.sm.database.DBHelper_PrefsTable;
-import com.sm.database.DBHelper_ScheduleTable;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -27,8 +24,7 @@ public class SpecificLocationActivity extends ListActivity {
 	Intent i;
 	String gen_loc;
 	String movietitle;
-	//String[] smname;
-	List<String> locs;
+	String[] smname;
 	String[] metromanila = { "Bicutan", "Fairview", "Mall Of Asia", "Manila",
 			"Marikina", "Megamall", "Muntinlupa", "North Edsa", "San Lazaro",
 			"Southmall", "Sta. Mesa", "Sta. Rosa", "Sucat", "Taytay",
@@ -47,14 +43,18 @@ public class SpecificLocationActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		Bundle ex = getIntent().getExtras();
 		if (ex != null) {
+
 			gen_loc = ex.getString("general_loc");
 			movietitle = ex.getString("MovieTitle");
 
-			DBHelper_ScheduleTable tbl = new DBHelper_ScheduleTable(
-					getBaseContext());
-			locs = tbl.getSchedules(gen_loc, movietitle);
+			if (gen_loc.equals("Metro Manila"))
+				smname = metromanila;
+			else if (gen_loc.equals("Luzon"))
+				smname = luzon;
+			else if (gen_loc.equals("VisMin"))
+				smname = vismin;
 		}
-
+		
 		TextView header = new TextView(getBaseContext());
 		header.setText(gen_loc);
 		header.setTextSize(20);
@@ -74,7 +74,7 @@ public class SpecificLocationActivity extends ListActivity {
 		ListView lv = getListView();
 		lv.addHeaderView(ll, null, false);
 
-		ListAdapter adapter = new ListAdapter(this);
+		ListAdapter adapter = new ListAdapter(this, smname);
 		setListAdapter(adapter);
 	}
 
@@ -83,7 +83,7 @@ public class SpecificLocationActivity extends ListActivity {
 		// TODO Auto-generated method stub
 
 		i = new Intent(getBaseContext(), Schedules.class);
-		i.putExtra("smname", locs.get(position)); //-1
+		i.putExtra("smname", smname[position - 1]); // -1
 		i.putExtra("genloc", gen_loc);
 		i.putExtra("MovieTitle", movietitle);
 		startActivity(i);
@@ -119,11 +119,12 @@ public class SpecificLocationActivity extends ListActivity {
 
 	public class ListAdapter extends ArrayAdapter<String> {
 		private final Context context;
-		//private final List<String> smname;
+		private final String[] smname;
 
-		public ListAdapter(Context context) {
-			super(context, R.layout.activity_specific_location);
+		public ListAdapter(Context context, String[] smname) {
+			super(context, R.layout.activity_specific_location, smname);
 			// TODO Auto-generated constructor stub
+			this.smname = smname;
 			this.context = context;
 		}
 
@@ -135,7 +136,7 @@ public class SpecificLocationActivity extends ListActivity {
 			View rowview = (View) inflater.inflate(
 					R.layout.activity_specific_location, parent, false);
 			TextView txt1 = (TextView) rowview.findViewById(R.id.smname);
-			txt1.setText(locs.get(position));
+			txt1.setText(this.smname[position]);
 			return rowview;
 		}
 
