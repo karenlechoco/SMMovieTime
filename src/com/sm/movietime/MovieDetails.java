@@ -1,9 +1,12 @@
 package com.sm.movietime;
 
+import com.sm.database.DBHelper_PrefsTable;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -94,7 +97,28 @@ public class MovieDetails extends Activity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_movie_details, menu);
+		DBHelper_PrefsTable tbl = new DBHelper_PrefsTable(getBaseContext());
+		if (tbl.isLoggedIn())
+			getMenuInflater().inflate(R.menu.global_logout_menu, menu);
+		else getMenuInflater().inflate(R.menu.global_login_menu, menu);
         return true;
+    }
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+		switch (item.getItemId()) {
+            case R.id.logout:
+                DBHelper_PrefsTable tbl = new DBHelper_PrefsTable(getBaseContext());
+                tbl.deletePref();
+                i = new Intent(getBaseContext(),TabMenu.class);
+                startActivity(i);
+                return true;
+            case R.id.login:
+                i = new Intent(getBaseContext(),CinemaLogin.class);
+                startActivity(i);
+                //return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
