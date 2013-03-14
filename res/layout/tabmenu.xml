@@ -7,15 +7,12 @@
 	    android:orientation="vertical"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent" >
-
-	    <TabWidget
+	    <TabWidget 
 	        android:id="@android:id/tabs"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:paddingTop="-20dp"
-	        android:layout_alignParentTop="true"
-	        android:background="#D3D3D3" />
-
+	        android:layout_alignParentTop="true" 
+	        android:background= "#D3D3D3" />
 	    <FrameLayout 
 	        android:id="@android:id/tabcontent"
 	        android:layout_width="fill_parent"

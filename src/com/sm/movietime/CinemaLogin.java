@@ -1,7 +1,6 @@
 package com.sm.movietime;
 
 import com.sm.database.DBHelper_UserAccountTable;
-import com.sm.database.Schedule;
 import com.sm.database.UserAccount;
 
 import android.app.Activity;
@@ -48,11 +47,8 @@ public class CinemaLogin extends Activity {
 				UserAccount u = new UserAccount();
 				u.setEmail(email.getText().toString());
 		        u.setPassword(pass.getText().toString());
-				if (tbl.verifyLogin(u, getBaseContext())) {
+				if (tbl.verifyLogin(u)) {
 					i = getIntent();
-					Bundle e = i.getExtras();
-					i.putExtra("MovieTitle", e.getString("MovieTitle"));
-					i.putExtra("time", e.getString("time"));
 					i.setClass(getBaseContext(), PurchaseBreakdown.class);
 					startActivity(i);
 					finish();

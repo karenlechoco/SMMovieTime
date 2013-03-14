@@ -61,7 +61,6 @@ public final class R {
         public static final int cinemaname=0x7f090032;
         public static final int cinematype=0x7f090033;
         public static final int date1=0x7f090045;
-        public static final int date_list=0x7f09004b;
         public static final int dates_list=0x7f090044;
         public static final int details=0x7f090018;
         public static final int editText1=0x7f090008;
@@ -87,11 +86,10 @@ public final class R {
         public static final int layout1=0x7f090000;
         public static final int layout2=0x7f090003;
         public static final int location_crumbs=0x7f090030;
-        public static final int login=0x7f09004d;
         public static final int login_button=0x7f090006;
-        public static final int logout=0x7f09004e;
+        public static final int logout=0x7f09004a;
         public static final int luzon=0x7f09002e;
-        public static final int menu_settings=0x7f09004c;
+        public static final int menu_settings=0x7f090049;
         public static final int metro_manila=0x7f09002d;
         public static final int movieName=0x7f090034;
         public static final int movie_catalogue=0x7f090017;
@@ -118,7 +116,7 @@ public final class R {
         public static final int screeningdate=0x7f090036;
         public static final int seatsselected=0x7f09003a;
         public static final int signup_submit=0x7f090015;
-        public static final int smname=0x7f09004a;
+        public static final int smname=0x7f090048;
         public static final int starring=0x7f09001f;
         public static final int starring1=0x7f09001e;
         public static final int starttime=0x7f090037;
@@ -127,8 +125,6 @@ public final class R {
         public static final int ticket_price=0x7f090043;
         public static final int ticketprice=0x7f090035;
         public static final int time1=0x7f090047;
-        public static final int time2=0x7f090048;
-        public static final int time3=0x7f090049;
         public static final int time_list=0x7f090046;
         public static final int tv1=0x7f090001;
         public static final int vismin=0x7f09002f;
@@ -147,15 +143,23 @@ public final class R {
         public static final int activity_reserve_seats=0x7f030009;
         public static final int activity_schedules=0x7f03000a;
         public static final int activity_specific_location=0x7f03000b;
-        public static final int cinema_container=0x7f03000c;
-        public static final int tabmenu=0x7f03000d;
+        public static final int tabmenu=0x7f03000c;
     }
     public static final class menu {
         public static final int activity_cinema_login=0x7f080000;
         public static final int activity_cinema_signup=0x7f080001;
-        public static final int activity_launcher=0x7f080002;
-        public static final int global_login_menu=0x7f080003;
-        public static final int global_logout_menu=0x7f080004;
+        public static final int activity_coming_soon=0x7f080002;
+        public static final int activity_launcher=0x7f080003;
+        public static final int activity_luzonlocation=0x7f080004;
+        public static final int activity_movie_details=0x7f080005;
+        public static final int activity_next_attraction=0x7f080006;
+        public static final int activity_now_showing=0x7f080007;
+        public static final int activity_now_showing_movie_details=0x7f080008;
+        public static final int activity_purchase_breakdown=0x7f080009;
+        public static final int activity_reserve_seats=0x7f08000a;
+        public static final int activity_schedules=0x7f08000b;
+        public static final int activity_specific_location=0x7f08000c;
+        public static final int activity_tabmenu=0x7f08000d;
     }
     public static final class string {
         public static final int action_settings=0x7f060033;

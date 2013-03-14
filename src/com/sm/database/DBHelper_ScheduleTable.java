@@ -1,11 +1,7 @@
 package com.sm.database;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -43,18 +39,6 @@ public class DBHelper_ScheduleTable extends SQLiteOpenHelper {
 		long num = db.insert(TABLE_SCHEDULE, null, values);
 		db.close();
 		Log.d("Sched Table", String.valueOf(num));
-	}
-	
-	public List<String> getSchedules (String genloc, String moviename) {
-		List<String> locs = new ArrayList<String>();
-		
-		SQLiteDatabase db = getReadableDatabase();
-		Cursor c = db.query(TABLE_SCHEDULE, new String[]{KEY_SPECLOC}, KEY_GENLOC + "=? AND " + KEY_MOVIE_NAME + "=?", new String[]{genloc,moviename}, null, null, null);
-		
-		while(c.moveToNext()) {
-			locs.add(c.getString(c.getColumnIndex(KEY_SPECLOC)));
-		}
-		return locs;
 	}
 	
 	public DBHelper_ScheduleTable (Context context) {

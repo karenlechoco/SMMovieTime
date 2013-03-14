@@ -9,9 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -23,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sm.database.DBHelper_MovieTable;
-import com.sm.database.DBHelper_PrefsTable;
 import com.sm.database.Movie;
 
 @SuppressWarnings("deprecation")
@@ -111,29 +108,8 @@ public class ComingSoon extends Activity {
 
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
-		DBHelper_PrefsTable tbl = new DBHelper_PrefsTable(getBaseContext());
-		if (tbl.isLoggedIn())
-			getMenuInflater().inflate(R.menu.global_logout_menu, menu);
-		else getMenuInflater().inflate(R.menu.global_login_menu, menu);
+        getMenuInflater().inflate(R.menu.activity_coming_soon, menu);
         return true;
-    }
-	
-	@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent i;
-		switch (item.getItemId()) {
-            case R.id.logout:
-                DBHelper_PrefsTable tbl = new DBHelper_PrefsTable(getBaseContext());
-                tbl.deletePref();
-                i = new Intent(getBaseContext(),TabMenu.class);
-                startActivity(i);
-                return true;
-            case R.id.login:
-                i = new Intent(getBaseContext(),CinemaLogin.class);
-                startActivity(i);
-                //return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
     
     public class ImageAdapter extends BaseAdapter {

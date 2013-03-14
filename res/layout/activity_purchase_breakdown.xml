@@ -57,7 +57,7 @@
 		        		        
 		        <TextView
 			        android:id="@+id/cinemaname"
-			        android:text="Cinema Name: IMAX"
+			        android:text="Cinema Name: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
 			        android:textSize="13sp"
@@ -67,7 +67,7 @@
 		        
 		        <TextView
 			        android:id="@+id/cinematype"
-			        android:text="Cinema Type: 3D"
+			        android:text="Cinema Type: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
 			        android:textSize="13sp"
@@ -87,7 +87,7 @@
 		        		        
 		        <TextView
 			        android:id="@+id/ticketprice"
-			        android:text="Ticket Price: 250.00"
+			        android:text="Ticket Price: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
 			        android:textSize="13sp"
@@ -97,7 +97,7 @@
 		        		        
 		        <TextView
 			        android:id="@+id/screeningdate"
-			        android:text="Screening Date: March 9, 2013"
+			        android:text="Screening Date: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
 			        android:textSize="13sp"
@@ -135,7 +135,7 @@
 		        
 		        <TextView
 			        android:id="@+id/availableseats"
-			        android:text="Available Seats: 288"
+			        android:text="Available Seats: "
 			        android:padding="2dp"
 			        android:layout_marginLeft="13dp"
 			        android:textSize="13sp"
